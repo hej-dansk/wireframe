@@ -11,15 +11,23 @@
    ============================================================ */
 
 :root {
-  /* ---- Brand colors (sampled from the live app) ------------ */
-  --navy:    #1c4e79;   /* header, headings, big stat numbers   */
-  --green:   #1d9e75;   /* buttons, links, positive state        */
-  --amber:   #c9971f;   /* rule boxes, "in progress", warnings    */
-  --red:     #d1495b;   /* incorrect / needs-work state           */
-  --purple:  #7c3aed;   /* "multiple choice" tag                  */
-  --blue:    #2563a8;   /* "examples" / info tag                  */
-  --logo-dk: #8b3fa8;   /* the small "DK" mark in the wordmark    */
-  --logo-mint: #6fd3ae; /* the "dansk" half of the wordmark       */
+  /* ---- Brand colors (exactly as specified) ------------------ */
+  --glacier: #7fb8cc;   /* Glacier Blue — raw brand color   */
+  --orange:  #e8792e;   /* Bright Orange — raw brand color  */
+  --flagred: #c8102e;   /* Flag Red — raw brand color       */
+
+  /* ---- Functional roles, all derived from the 3 colors above.
+     Nothing here introduces an outside hue — "navy" is just a
+     darkened Glacier Blue, and the tag colors are light/dark
+     mixes of Glacier Blue, Orange, and Flag Red. -------------- */
+  --navy:    color-mix(in srgb, var(--glacier) 30%, #071c24); /* header, headings, big stat numbers */
+  --green:   var(--orange);   /* buttons, links, positive state (kept the var name for compatibility) */
+  --amber:   var(--glacier);  /* rule boxes, "in progress", secondary highlight */
+  --red:     var(--flagred);  /* incorrect / needs-work state */
+  --purple:  color-mix(in srgb, var(--red) 55%, var(--navy)); /* "multiple choice" tag — a muted plum from Red+Navy */
+  --blue:    color-mix(in srgb, var(--amber) 65%, black);  /* "examples" / info tag text (darker for legibility) */
+  --logo-dk: var(--red);   /* the small "DK" mark in the wordmark */
+  --logo-mint: var(--amber); /* the "dansk" half of the wordmark    */
 
   /* ---- Derived tints (auto-follow the base colors above) --- */
   --navy-dark:   color-mix(in srgb, var(--navy) 85%, black);
@@ -28,11 +36,11 @@
   --green-dark:  color-mix(in srgb, var(--green) 82%, black);
   --green-tint:  color-mix(in srgb, var(--green) 14%, white);
   --green-tint-2:color-mix(in srgb, var(--green) 22%, white);
-  --amber-tint:  color-mix(in srgb, var(--amber) 18%, white);
-  --amber-bg:    color-mix(in srgb, var(--amber) 12%, #fffaf0);
+  --amber-tint:  color-mix(in srgb, var(--amber) 20%, white);
+  --amber-bg:    color-mix(in srgb, var(--amber) 14%, #fbfdfe);
   --red-tint:    color-mix(in srgb, var(--red) 15%, white);
-  --purple-tint: color-mix(in srgb, var(--purple) 14%, white);
-  --blue-tint:   color-mix(in srgb, var(--blue) 12%, white);
+  --purple-tint: color-mix(in srgb, var(--purple) 16%, white);
+  --blue-tint:   color-mix(in srgb, var(--glacier) 16%, white);
 
   /* ---- Neutrals --------------------------------------------*/
   --ink:      #1f2937;
@@ -148,6 +156,31 @@ button, input, select { font-family: inherit; }
 .btn--ghost:hover { background: #f2f4f8; }
 .btn--sm { padding: 0.4rem 0.85rem; font-size: 0.82rem; }
 .btn[disabled] { background: #d7dbe3; color: #fff; cursor: not-allowed; }
+
+/* ---- click / press feedback — every button dips and darkens
+   on click so you can see the color react to the action ------- */
+.btn:active, .btn-logout:active {
+  transform: translateY(1px) scale(0.97);
+  filter: brightness(0.88);
+}
+.btn { transition: transform 0.08s ease, filter 0.08s ease, background 0.15s ease, color 0.15s ease, border-color 0.15s ease; }
+
+/* ---- toggle buttons (Bookmark / In Progress / Mark Done) —
+   click to flip between "off" (ghost) and "on" (filled) states */
+.btn--toggle { background: #fff; color: var(--ink-soft); border-color: var(--card-border); }
+.btn--toggle:hover { background: #f2f4f8; }
+.btn--toggle.is-on {
+  background: var(--amber-tint);
+  color: color-mix(in srgb, var(--amber) 55%, black);
+  border-color: var(--amber);
+  font-weight: 700;
+}
+.btn--toggle.is-on:hover { background: color-mix(in srgb, var(--amber) 28%, white); }
+
+/* ---- pricing "Get X" click-to-select ------------------------ */
+.price-card .btn.is-chosen {
+  background: var(--green); color: #fff; border-color: var(--green);
+}
 
 /* ============================================================
    CARDS & TAGS
@@ -330,7 +363,14 @@ button, input, select { font-family: inherit; }
 .week__tasks { border-top: 1px solid var(--card-border); }
 .task { display: flex; align-items: center; gap: 0.9rem; padding: 0.85rem 1.5rem; border-bottom: 1px solid #f0f2f6; }
 .task:last-child { border-bottom: none; }
-.task__check { width: 20px; height: 20px; border: 2px solid var(--card-border); border-radius: 5px; flex-shrink: 0; }
+.task__check { width: 20px; height: 20px; border: 2px solid var(--card-border); border-radius: 5px; flex-shrink: 0; cursor: pointer; position: relative; transition: background 0.12s ease, border-color 0.12s ease; }
+.task__check:hover { border-color: var(--green); }
+.task__check.is-checked { background: var(--green); border-color: var(--green); }
+.task__check.is-checked::after {
+  content: "✓"; position: absolute; inset: 0; color: #fff;
+  font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center;
+}
+.task.is-done .task__title { color: var(--ink-mute); text-decoration: line-through; }
 .task__type { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.3px; padding: 0.3rem 0.6rem; border-radius: 999px; white-space: nowrap; }
 .task__type--read { background: var(--blue-tint); color: var(--blue); }
 .task__type--quiz { background: var(--green-tint); color: var(--green-dark); }
@@ -379,7 +419,13 @@ button, input, select { font-family: inherit; }
 .quick-check__label { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.4px; color: var(--green-dark); margin-bottom: 0.5rem; }
 .quick-check h4 { font-size: 1rem; color: var(--navy); margin-bottom: 0.9rem; }
 .qc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
-.qc-opt { border: 1.5px solid var(--card-border); border-radius: var(--radius-sm); padding: 0.7rem 1rem; font-size: 0.92rem; background: #fff; }
+.qc-opt {
+  border: 1.5px solid var(--card-border); border-radius: var(--radius-sm);
+  padding: 0.7rem 1rem; font-size: 0.92rem; background: #fff;
+  cursor: pointer; transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+.qc-opt:hover { border-color: var(--green); }
+.qc-opt.is-selected { border-color: var(--green); background: var(--green-tint); color: var(--green-dark); font-weight: 700; }
 .chapter-footer-nav { text-align: right; margin-top: 3rem; }
 .chapter-footer-nav a { font-weight: 700; color: var(--green-dark); font-size: 1.05rem; }
 
@@ -397,11 +443,17 @@ button, input, select { font-family: inherit; }
   display: flex; align-items: center; gap: 0.7rem;
   border: 1.5px solid var(--card-border); border-radius: var(--radius-sm);
   padding: 0.75rem 1rem; font-size: 0.92rem; background: #fff;
+  cursor: pointer; transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
 }
+.q-opt:hover { border-color: var(--green); }
+.q-opt.is-selected { border-color: var(--green); background: var(--green-tint); color: var(--green-dark); font-weight: 700; }
+.q-opt.is-selected .q-opt__letter { background: var(--green); color: #fff; }
 .q-opt--rowbg { background: var(--option-bg); border-color: transparent; }
+.q-opt--rowbg.is-selected { background: var(--green-tint); }
 .q-opt__letter {
   width: 24px; height: 24px; border-radius: 50%; background: var(--green-tint); color: var(--green-dark);
   display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 800; flex-shrink: 0;
+  transition: background 0.12s ease, color 0.12s ease;
 }
 .quiz-submit-bar { display: flex; align-items: center; justify-content: space-between; border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 1rem 1.5rem; background: #fff; margin-top: 1rem; }
 
@@ -475,7 +527,8 @@ button, input, select { font-family: inherit; }
 .theme-tab-wrap:hover .theme-panel,
 .theme-tab-wrap.is-pinned .theme-panel { opacity: 1; visibility: visible; transform: translateY(0); }
 .theme-tab-wrap:hover::before { content: ""; position: absolute; inset: -60px -20px auto; height: 140px; }
-.tp-title { font-family: var(--font-display); font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; font-size: 1rem; }
+.tp-title { font-family: var(--font-display); font-weight: 700; color: var(--navy); margin-bottom: 0.1rem; font-size: 1rem; }
+.tp-hint { font-size: 0.72rem; color: var(--ink-mute); margin-bottom: 0.5rem; }
 .tp-section-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.4px; color: var(--ink-mute); margin: 0.7rem 0 0.35rem; }
 .tp-row { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; padding: 0.25rem 0; font-size: 0.86rem; color: var(--ink); }
 .tp-row input[type="color"] { width: 32px; height: 24px; border: 1px solid var(--card-border); border-radius: 6px; padding: 0; cursor: pointer; background: none; }

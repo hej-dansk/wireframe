@@ -8,6 +8,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=League+Spartan:wght@600;700;800&family=Poppins:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Fraunces:wght@500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="site.css" />
+<script>
+/* Apply any saved theme (colors + fonts) immediately, before paint,
+   so every page opens already re-themed — not just the one you
+   changed it on. theme-panel.js keeps this in sync when you edit. */
+(function () {
+  try {
+    var data = JSON.parse(localStorage.getItem("hejdansk-theme") || "null");
+    if (!data) return;
+    var root = document.documentElement.style;
+    if (data.colors) for (var k in data.colors) root.setProperty(k, data.colors[k]);
+    if (data.fonts && data.fonts.heading) root.setProperty("--font-display", '"' + data.fonts.heading + '", sans-serif');
+    if (data.fonts && data.fonts.body) root.setProperty("--font-body", data.fonts.body === "System UI" ? "-apple-system, BlinkMacSystemFont, sans-serif" : '"' + data.fonts.body + '", sans-serif');
+  } catch (e) {}
+})();
+</script>
 <title>Gratis Prøve — Hejdansk</title>
 </head>
 <body>
@@ -75,6 +90,7 @@
 
 </main>
 
+<script src="interactions.js"></script>
 <script src="theme-panel.js"></script>
 </body>
 </html>
