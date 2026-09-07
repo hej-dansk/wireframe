@@ -1,0 +1,18 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hejdansk logo">
+  <g transform="translate(2 8)">
+    <ellipse cx="66" cy="58" rx="30" ry="10.5" fill="#cfe6ee" transform="rotate(-6 66 58)"/>
+    <ellipse cx="63" cy="66" rx="30" ry="10.5" fill="#9fcbdb" transform="rotate(-4 63 66)"/>
+    <ellipse cx="60" cy="74" rx="28" ry="10" fill="#6fa9bd" transform="rotate(-2 60 74)"/>
+    <path d="M20 78
+             C4 78 2 60 14 50
+             C22 43 24 32 16 26
+             C24 24 30 30 30 38
+             C30 46 24 50 24 58
+             C24 66 34 70 44 66
+             C50 64 54 58 50 52
+             C56 54 58 62 52 68
+             C44 76 30 78 20 78 Z"
+          fill="#ffffff"/>
+    <path d="M14 26 L4 30 L15 33 Z" fill="#e8792e"/>
+  </g>
+</svg>

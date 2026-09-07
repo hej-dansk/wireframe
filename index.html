@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Hejdansk — Learn Danish grammar and vocabulary. Track progress, take quizzes, write notes." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=League+Spartan:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="theme.css" />
+<title>Dashboard — Hejdansk</title>
+</head>
+<body>
+<div class="app">
+
+  <aside class="rail">
+    <a href="index.html" class="rail__brand">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g transform="translate(2 8)">
+          <ellipse cx="66" cy="58" rx="30" ry="10.5" fill="var(--color-primary-tint)" transform="rotate(-6 66 58)"/>
+          <ellipse cx="63" cy="66" rx="30" ry="10.5" fill="var(--color-primary)" opacity="0.7" transform="rotate(-4 63 66)"/>
+          <ellipse cx="60" cy="74" rx="28" ry="10" fill="var(--color-primary-dim)" transform="rotate(-2 60 74)"/>
+          <path d="M20 78 C4 78 2 60 14 50 C22 43 24 32 16 26 C24 24 30 30 30 38 C30 46 24 50 24 58 C24 66 34 70 44 66 C50 64 54 58 50 52 C56 54 58 62 52 68 C44 76 30 78 20 78 Z" fill="var(--color-surface)" stroke="var(--color-line)" stroke-width="1"/>
+          <path d="M14 26 L4 30 L15 33 Z" fill="var(--color-accent)"/>
+        </g>
+      </svg>
+      <span>Hejdansk</span>
+    </a>
+
+    <nav class="rail__nav">
+      <a href="index.html" class="rail__link is-active">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
+        <span>Dashboard</span>
+      </a>
+      <a href="grammar.html" class="rail__link">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M4 5c2-1 5-1 8 0v14c-3-1-6-1-8 0z"/><path d="M20 5c-2-1-5-1-8 0v14c3-1 6-1 8 0z"/></svg>
+        <span>Grammar</span>
+      </a>
+      <a href="vocabulary.html" class="rail__link">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>
+        <span>Vocabulary</span>
+      </a>
+      <a href="quiz.html" class="rail__link">
+        <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+        <span>Quiz</span>
+      </a>
+      <a href="progress.html" class="rail__link">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M5 20V10M12 20V4M19 20v-7"/></svg>
+        <span>Progress</span>
+      </a>
+      <a href="notes.html" class="rail__link">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M4 20l4-1 11-11-3-3L5 16z"/></svg>
+        <span>Notes</span>
+      </a>
+    </nav>
+
+    <div class="rail__foot">
+      <div class="theme-switch">
+        <span class="theme-switch__label">Try a theme</span>
+        <div class="theme-switch__row">
+          <button class="swatch is-active" data-theme="glacier" title="Glacier (default)">
+            <span style="background:#7fb8cc"></span>
+          </button>
+          <button class="swatch" data-theme="sunset" title="Sunset">
+            <span style="background:#e8792e"></span>
+          </button>
+          <button class="swatch" data-theme="mono" title="Mono">
+            <span style="background:#3d4a4f"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="page-head">
+      <div class="page-head__eyebrow">Tirsdag, 8. september</div>
+      <h1>Goddag, Anna</h1>
+      <p>Du har lært 214 ord indtil videre. Klar til dagens lektion?</p>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:var(--space-4)">
+      <div class="sheet sheet--tint">
+        <div class="row" style="align-items:flex-start;margin-bottom:var(--space-2)">
+          <div class="stat">
+            <span class="stat__value">6</span>
+            <span class="stat__label">dages stribe</span>
+          </div>
+          <span class="tag tag--accent">Personlig rekord: 11</span>
+        </div>
+        <div class="streak">
+          <div class="streak__dot is-done">M</div>
+          <div class="streak__dot is-done">T</div>
+          <div class="streak__dot is-done">O</div>
+          <div class="streak__dot is-done">T</div>
+          <div class="streak__dot is-done">F</div>
+          <div class="streak__dot is-done">L</div>
+          <div class="streak__dot">S</div>
+        </div>
+      </div>
+
+      <div class="sheet">
+        <h3 style="margin-bottom:var(--space-2)">Fortsæt hvor du slap</h3>
+        <div class="lesson-row" style="border:none;padding:0;background:transparent">
+          <div class="lesson-row__icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M4 5c2-1 5-1 8 0v14c-3-1-6-1-8 0z"/><path d="M20 5c-2-1-5-1-8 0v14c3-1 6-1 8 0z"/></svg>
+          </div>
+          <div class="lesson-row__body">
+            <div class="lesson-row__title">Førnutid — perfektum</div>
+            <div class="bar" style="margin-top:6px"><div class="bar__fill" style="width:64%"></div></div>
+          </div>
+          <a href="grammar.html" class="btn btn--primary">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M6 4l14 8-14 8z"/></svg>
+            Fortsæt
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom:var(--space-2)">Denne uges fremgang</h3>
+    <div class="grid-3" style="margin-bottom:var(--space-4)">
+      <div class="sheet">
+        <div class="stat">
+          <span class="stat__value">214</span>
+          <span class="stat__label">ord lært</span>
+        </div>
+      </div>
+      <div class="sheet">
+        <div class="stat">
+          <span class="stat__value">18</span>
+          <span class="stat__label">lektioner gennemført</span>
+        </div>
+      </div>
+      <div class="sheet">
+        <div class="stat">
+          <span class="stat__value">87%</span>
+          <span class="stat__label">gennemsnit i quizzer</span>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom:var(--space-2)">Anbefalet til dig</h3>
+    <div class="stack">
+      <div class="lesson-row">
+        <div class="lesson-row__icon">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>
+        </div>
+        <div class="lesson-row__body">
+          <div class="lesson-row__title">Ordforråd: På restaurant</div>
+          <div class="lesson-row__meta">12 nye ord · 8 min</div>
+        </div>
+        <span class="tag">Ny</span>
+      </div>
+      <div class="lesson-row">
+        <div class="lesson-row__icon">
+          <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+        </div>
+        <div class="lesson-row__body">
+          <div class="lesson-row__title">Quiz: Ugens ord</div>
+          <div class="lesson-row__meta">10 spørgsmål · 5 min</div>
+        </div>
+        <span class="tag tag--accent">Anbefalet</span>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="theme-switch.js"></script>
+</body>
+</html>
