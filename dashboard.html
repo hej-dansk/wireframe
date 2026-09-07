@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Hejdansk — Pass PD2/PD3 on your first try." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=League+Spartan:wght@600;700;800&family=Poppins:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Fraunces:wght@500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="site.css" />
+<title>Dashboard — Hejdansk</title>
+</head>
+<body>
+<header class="topnav">
+  <a href="dashboard.html" class="logo">
+    <span class="logo__dk">DK</span><span class="logo__hej">Hej</span><span class="logo__dansk">dansk</span>
+  </a>
+  <nav class="topnav__links">
+    <a href="dashboard.html" class="is-active">Dashboard</a>
+      <a href="plan.html" class="">12-Week Plan</a>
+      <a href="chapters.html" class="">Chapters</a>
+      <a href="practice-quiz.html" class="">Practice</a>
+      <a href="#" class="">Reading</a>
+      <a href="#" class="">Writing</a>
+      <a href="#" class="">Speaking</a>
+      <a href="mock-tests.html" class="">Mock Tests</a>
+      
+  </nav>
+  <div class="topnav__user">
+    <span>Hi,<br>Shabbir</span>
+    <button class="btn-logout" type="button">Logout</button>
+  </div>
+</header>
+<main class="page ">
+
+<div class="eyebrow-row">
+  <div>
+    <h1>Welcome back, <span style="color:var(--green)">Shabbir</span>!</h1>
+    <p class="subtitle">Track your PD2 exam readiness below.</p>
+  </div>
+  <a href="chapters.html" class="btn btn--solid">Browse All Chapters →</a>
+</div>
+
+<div class="dash-grid">
+  <div class="card readiness">
+    <div class="ring">
+      <svg width="130" height="130" viewBox="0 0 130 130">
+        <circle cx="65" cy="65" r="54" fill="none" stroke="var(--card-border)" stroke-width="12"/>
+        <circle cx="65" cy="65" r="54" fill="none" stroke="#555" stroke-width="12"
+          stroke-dasharray="339.3" stroke-dashoffset="319" stroke-linecap="round"/>
+      </svg>
+      <div class="ring__value"><b>6</b><span>/ 100</span></div>
+    </div>
+    <div class="readiness__body">
+      <div class="readiness__label">PD2 EXAM READINESS</div>
+      <h2 class="readiness__status">Not Ready</h2>
+      <p style="color:var(--ink-soft); margin-bottom:0.8rem">You would likely fail PD2 today. Start studying consistently.</p>
+      <div class="mini-stats">
+        <div class="mini-stat"><b>1/12</b><span>CHAPTERS DONE</span></div>
+        <div class="mini-stat"><b>1/12</b><span>QUIZZES DONE</span></div>
+        <div class="mini-stat"><b>0</b><span>NOTES TAKEN</span></div>
+      </div>
+      <a href="chapters.html">Continue studying to increase your score →</a>
+    </div>
+  </div>
+
+  <div class="card days-card">
+    <b>64</b>
+    <div class="label">DAYS LEFT</div>
+    <div class="until">Until the next PD2 exam</div>
+    <div class="date">10 November 2026</div>
+  </div>
+</div>
+
+<div class="stat-row">
+  <div class="stat-box"><b>12</b><span>TOTAL CHAPTERS</span></div>
+  <div class="stat-box"><b>1</b><span>COMPLETED</span></div>
+  <div class="stat-box"><b>1</b><span>QUIZZES DONE</span></div>
+  <div class="stat-box"><b>0%</b><span>QUIZ AVERAGE</span></div>
+</div>
+
+</main>
+
+<script src="theme-panel.js"></script>
+</body>
+</html>
