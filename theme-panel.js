@@ -11,7 +11,7 @@
     { key: "--amber",  label: "Glacier" },
     { key: "--red",    label: "Red" },
   ];
-  const HEADING_FONTS = ["League Spartan", "Poppins", "Space Grotesk", "Fraunces", "DM Sans"];
+  const HEADING_FONTS = ["Inter", "League Spartan", "Poppins", "Space Grotesk", "Fraunces", "DM Sans"];
   const BODY_FONTS = ["Inter", "Poppins", "DM Sans", "Source Sans Pro", "System UI"];
 
   function loadStore() {

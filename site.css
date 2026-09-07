@@ -10,24 +10,37 @@
    instantly — see theme-panel.js.
    ============================================================ */
 
-:root {
-  /* ---- Brand colors (exactly as specified) ------------------ */
-  --glacier: #7fb8cc;   /* Glacier Blue — raw brand color   */
-  --orange:  #e8792e;   /* Bright Orange — raw brand color  */
-  --flagred: #c8102e;   /* Flag Red — raw brand color       */
+/* ============================================================
+   HEJDANSK — SITE STYLESHEET
+   ------------------------------------------------------------
+   Colors and type here match the official Brand Guideline
+   (Glacier Blue / Bright Orange / Flag Red / Pale Ice Tint /
+   Fjord Navy / offwhite, all Inter). Everything funnels through
+   the :root variables below, with tints derived via color-mix()
+   so the whole site restyles from one change. A live customizer
+   (bottom-right, hover or tap) lets you override the base colors
+   and fonts and see it ripple through instantly — see
+   theme-panel.js.
+   ============================================================ */
 
-  /* ---- Functional roles, all derived from the 3 colors above.
-     Nothing here introduces an outside hue — "navy" is just a
-     darkened Glacier Blue, and the tag colors are light/dark
-     mixes of Glacier Blue, Orange, and Flag Red. -------------- */
-  --navy:    color-mix(in srgb, var(--glacier) 30%, #071c24); /* header, headings, big stat numbers */
-  --green:   var(--orange);   /* buttons, links, positive state (kept the var name for compatibility) */
-  --amber:   var(--glacier);  /* rule boxes, "in progress", secondary highlight */
-  --red:     var(--flagred);  /* incorrect / needs-work state */
+:root {
+  /* ---- Brand colors (from the Brand Guideline, 7 Sept) ------ */
+  --glacier:   #7fb8cc;   /* Glacier Blue   */
+  --orange:    #e8792e;   /* Bright Orange  */
+  --paleice:   #b9dde8;   /* Pale Ice Tint  */
+  --flagred:   #c8102e;   /* Flag Red       */
+  --fjordnavy: #1c2e4a;   /* Fjord Navy     */
+  --offwhite:  #d9d9d9;   /* "Pure white" swatch — actually a soft neutral gray, used for muted surfaces/borders */
+
+  /* ---- Functional roles, all mapped onto the 6 colors above -- */
+  --navy:    var(--fjordnavy); /* header, headings, big stat numbers */
+  --green:   var(--orange);    /* buttons, links, positive state (kept the var name for compatibility) */
+  --amber:   var(--glacier);   /* rule boxes, "in progress", secondary highlight */
+  --red:     var(--flagred);   /* incorrect / needs-work state */
   --purple:  color-mix(in srgb, var(--red) 55%, var(--navy)); /* "multiple choice" tag — a muted plum from Red+Navy */
   --blue:    color-mix(in srgb, var(--amber) 65%, black);  /* "examples" / info tag text (darker for legibility) */
-  --logo-dk: var(--red);   /* the small "DK" mark in the wordmark */
-  --logo-mint: var(--amber); /* the "dansk" half of the wordmark    */
+  --logo-dk: var(--red);
+  --logo-mint: var(--amber);
 
   /* ---- Derived tints (auto-follow the base colors above) --- */
   --navy-dark:   color-mix(in srgb, var(--navy) 85%, black);
@@ -36,23 +49,25 @@
   --green-dark:  color-mix(in srgb, var(--green) 82%, black);
   --green-tint:  color-mix(in srgb, var(--green) 14%, white);
   --green-tint-2:color-mix(in srgb, var(--green) 22%, white);
-  --amber-tint:  color-mix(in srgb, var(--amber) 20%, white);
-  --amber-bg:    color-mix(in srgb, var(--amber) 14%, #fbfdfe);
+  --amber-tint:  color-mix(in srgb, var(--paleice) 45%, white);
+  --amber-bg:    color-mix(in srgb, var(--paleice) 30%, white);
   --red-tint:    color-mix(in srgb, var(--red) 15%, white);
   --purple-tint: color-mix(in srgb, var(--purple) 16%, white);
-  --blue-tint:   color-mix(in srgb, var(--glacier) 16%, white);
+  --blue-tint:   color-mix(in srgb, var(--paleice) 45%, white);
 
   /* ---- Neutrals --------------------------------------------*/
   --ink:      #1f2937;
   --ink-soft: #5b6472;
   --ink-mute: #8b93a1;
-  --page-bg:  #f5f7fb;
+  --page-bg:  color-mix(in srgb, var(--paleice) 22%, #fbfdfe);
   --card-bg:  #ffffff;
-  --card-border: #e3e7ee;
-  --option-bg: #e8ebf5;
+  --card-border: color-mix(in srgb, var(--offwhite) 65%, white);
+  --option-bg: color-mix(in srgb, var(--paleice) 30%, white);
 
-  /* ---- Type ---------------------------------------------- */
-  --font-display: "League Spartan", "Poppins", sans-serif;
+  /* ---- Type — per the Brand Guideline font update:
+     Inter ExtraBold (headings), Inter Bold (subheadings),
+     Inter Regular (body). Line-height 1.25, letter-spacing 0. -- */
+  --font-display: "Inter", "Poppins", sans-serif;
   --font-body:    "Inter", -apple-system, sans-serif;
 
   --radius-sm: 8px;
@@ -73,11 +88,13 @@ body {
 }
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 800; /* Inter ExtraBold — per Brand Guideline "Heading" spec */
   margin: 0 0 0.3rem;
   color: var(--navy);
-  line-height: 1.15;
+  line-height: 1.25;
+  letter-spacing: 0;
 }
+h3, h4 { font-weight: 700; } /* Inter Bold — "Subheading" spec */
 p { margin: 0 0 0.9rem; }
 a { color: var(--green); text-decoration: none; }
 button, input, select { font-family: inherit; }
@@ -99,10 +116,10 @@ button, input, select { font-family: inherit; }
   z-index: 40;
   flex-wrap: wrap;
 }
-.logo { display: flex; align-items: baseline; gap: 0.3rem; font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; margin-right: 0.5rem; }
-.logo__dk { color: var(--logo-dk); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.5px; align-self: center; }
-.logo__hej { color: #fff; }
-.logo__dansk { color: var(--logo-mint); }
+.logo { display: flex; align-items: center; gap: 0.55rem; font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; margin-right: 0.5rem; }
+.logo__icon { width: 32px; height: 32px; flex-shrink: 0; display: block; }
+.logo__word { color: #fff; letter-spacing: 0; }
+.logo--onlight .logo__word { color: var(--navy); }
 .topnav__links { display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap; flex: 1; }
 .topnav__links a {
   color: #cfe0f0;
@@ -316,6 +333,7 @@ button, input, select { font-family: inherit; }
 
 .site-footer { text-align: center; padding: 3rem 1.75rem; color: var(--ink-mute); }
 .site-footer .logo { justify-content: center; margin-bottom: 0.4rem; }
+.site-footer .logo .logo__word { color: var(--navy); }
 .site-footer a { color: var(--ink-soft); font-weight: 600; }
 
 /* ============================================================
