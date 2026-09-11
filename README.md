@@ -1,9 +1,10 @@
 # Hej Dansk — brand-guideline clone
 
-An 11-page static clone of the Hej Dansk app, now matching the official
-Brand Guideline (colors, fonts, and real logo assets) with click
+An 11-page static clone of the Hej Dansk app, matching the official
+Brand Guideline (colors, fonts, and real logo assets), with click
 interactions so you can see how the palette behaves when something
-actually happens (selected, checked, pressed, chosen).
+actually happens (selected, checked, pressed, chosen), plus an
+uploadable hero cover photo for testing real imagery in the banner.
 
 ## Open it
 Open `index.html` in a browser — no build step needed.
@@ -38,6 +39,22 @@ Uses your actual brand assets (in `assets/`), not a redrawn placeholder:
   reference/future use (the grey version for muted contexts, the full
   lockup for light-background placements)
 
+## Hero cover photo — upload 1, or 2–3 for a carousel
+The landing page hero now uses a real photo (`assets/hero-default.jpg`,
+the swan/laptop/Copenhagen shot) instead of a CSS pattern, with two
+small controls under the CTA button:
+- **🖼 Change cover photo** — opens a file picker. Choose 1 image to
+  swap the cover outright, or 2–3 to get a slow, auto-advancing
+  carousel with click-able dots.
+- **↺ Reset** — clears whatever you uploaded and goes back to the
+  shipped default photo.
+
+Uploads are resized on-device (max 1600px, JPEG ~82% quality) before
+being saved to `localStorage`, so a handful of photos stay well within
+storage limits and the choice persists across reloads and other pages
+you visit later. This only runs on `index.html` (`hero-uploader.js`);
+nothing else needs it.
+
 ## Live customizer — synced across every page
 Hover (or tap) the palette icon, bottom-right: color pickers for Navy /
 Orange / Glacier / Red, font selects for headings/body, and a reset.
@@ -71,8 +88,6 @@ questions), `mock-tests.html`, `mock-test-intro.html`,
   one-word form everywhere instead.
 - "Reading", "Writing", and "Speaking" nav items are inert — no source
   pages were included for those.
-- The landing-page hero still uses a CSS-drawn rooftop pattern in
-  place of a real product photo.
 
 ## Hosting on GitHub Pages
 Already set up for this — push the folder as-is (root or a `/docs`
@@ -81,5 +96,6 @@ folder), enable Pages in **Settings → Pages**, done. The included
 everything exactly as-is. Every link is relative, so it works whether
 it's served at the root of `username.github.io` or at a subpath like
 `username.github.io/repo-name/`. And since it's served over `https://`
-from one real origin, the customizer's cross-page sync is fully
-reliable — more so than opening the files locally via `file://`.
+from one real origin, the customizer's and hero uploader's cross-page
+sync are fully reliable — more so than opening the files locally via
+`file://`.

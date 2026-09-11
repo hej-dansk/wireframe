@@ -50,11 +50,20 @@
 </header>
 
 <section class="hero">
+  <div class="hero__bg-stack"></div>
+  <div class="hero__scrim"></div>
   <div class="hero__inner">
     <span class="hero__badge">DK PD2 &amp; PD3 EXAM PREP</span>
     <h1>Pass PD2/PD3<span class="accent">on your first try.</span></h1>
     <p>Most people fail because they don't know they're not ready. Hejdansk tells you the truth — and fixes the gaps before exam day.</p>
     <a href="dashboard.html" class="btn btn--solid">Go to Dashboard →</a>
+  </div>
+  <div class="hero__controls">
+    <button type="button" class="hero__upload-btn">🖼 Change cover photo</button>
+    <button type="button" class="hero__reset-btn">↺ Reset</button>
+    <div class="hero__dots"></div>
+    <input type="file" class="hero__file-input" accept="image/*" multiple hidden>
+    <span class="hero__hint">Upload 1 photo to swap the cover, or 2–3 for a sliding carousel — saved on this device.</span>
   </div>
 </section>
 
@@ -262,5 +271,6 @@
 
 <script src="interactions.js"></script>
 <script src="theme-panel.js"></script>
+<script src="hero-uploader.js"></script>
 </body>
 </html>
