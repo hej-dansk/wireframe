@@ -6,12 +6,12 @@
 (function () {
   const STORAGE_KEY = "hejdansk-theme";
   const VARS = [
-    { key: "--navy",   label: "Navy" },
-    { key: "--green",  label: "Orange" },
-    { key: "--amber",  label: "Glacier" },
+    { key: "--navy",   label: "Nordic Navy" },
+    { key: "--green",  label: "Sky Blue" },
+    { key: "--amber",  label: "Light Blue" },
     { key: "--red",    label: "Red" },
   ];
-  const HEADING_FONTS = ["Inter", "League Spartan", "Poppins", "Space Grotesk", "Fraunces", "DM Sans"];
+  const HEADING_FONTS = ["Baloo 2", "Inter", "League Spartan", "Poppins", "Space Grotesk", "Fraunces", "DM Sans"];
   const BODY_FONTS = ["Inter", "Poppins", "DM Sans", "Source Sans Pro", "System UI"];
 
   function loadStore() {

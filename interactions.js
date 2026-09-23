@@ -23,8 +23,9 @@
     });
 
     // ---- Quiz / reading options: click to select (single choice
-    // within its own question card) ----
-    on(".q-opt", "click", function () {
+    // within its own question card). Graded questions (with a
+    // data-correct answer key) are instead handled by mascot-quiz.js. ----
+    on(".q-opt:not([data-correct])", "click", function () {
       const scope = this.closest(".q-card") || this.parentElement;
       scope.querySelectorAll(".q-opt").forEach(o => o.classList.remove("is-selected"));
       this.classList.add("is-selected");

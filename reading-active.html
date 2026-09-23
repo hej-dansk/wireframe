@@ -7,7 +7,7 @@
 <link rel="icon" type="image/svg+xml" href="assets/logo-g_blue-bg.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=League+Spartan:wght@600;700;800&family=Poppins:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Fraunces:wght@500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Baloo+2:wght@500;600;700;800&family=League+Spartan:wght@600;700;800&family=Poppins:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Fraunces:wght@500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="site.css" />
 <script>
 /* Apply any saved theme (colors + fonts) immediately, before paint,
@@ -29,7 +29,7 @@
 <body>
 <header class="topnav">
   <a href="dashboard.html" class="logo">
-    <img src="assets/logo-original-transparent.svg" class="logo__icon" alt="" />
+    <img src="assets/logo-3d-swan.png" class="logo__icon" alt="" />
     <span class="logo__word">Hej Dansk</span>
   </a>
   <nav class="topnav__links">
@@ -61,7 +61,7 @@
 
 <div class="card" style="margin:1.5rem 0">
   <h3>📖 Læsning – Gratis Prøve</h3>
-  <p>Læs teksten og besvar spørgsmålene.</p>
+  <p>Læs teksten og besvar spørgsmålene. Vælg et svar for at tjekke det med det samme.</p>
   <div class="pill-row" style="display:flex; gap:0.5rem">
     <span class="pill-meta">8 questions</span>
     <span class="pill-meta">⏱ 14:57 left</span>
@@ -69,6 +69,14 @@
 </div>
 
 <div class="answered-bar">0 / 8 besvaret</div>
+
+<div class="quiz-summary-banner">
+  <img src="assets/mascot-welldone.png" alt="">
+  <div>
+    <h3>Well done — all correct!</h3>
+    <p>You got 8 out of 8. Nice work.</p>
+  </div>
+</div>
 
 <div class="reading-split">
   <div class="passage-card card">
@@ -88,42 +96,42 @@
     <div class="q-card">
       <div class="q-card__tags"><span class="tag tag--green">Q1</span><span class="tag tag--purple">MULTIPLE CHOICE</span></div>
       <h4>Hvor gammel er Sara?</h4>
-      <div class="q-opts-list"><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">A</span>25 år</div><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">B</span>28 år</div><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">C</span>32 år</div></div>
+      <div class="q-opts-list"><div class="q-opt q-opt--rowbg" data-correct="false"><span class="q-opt__letter">A</span>25 år</div><div class="q-opt q-opt--rowbg" data-correct="true"><span class="q-opt__letter">B</span>28 år</div><div class="q-opt q-opt--rowbg" data-correct="false"><span class="q-opt__letter">C</span>32 år</div></div>
     </div>
     <div class="q-card">
       <div class="q-card__tags"><span class="tag tag--green">Q2</span><span class="tag tag--purple">MULTIPLE CHOICE</span></div>
       <h4>Hvad arbejder Sara som?</h4>
-      <div class="q-opts-list"><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">A</span>Sygeplejerske</div><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">B</span>Oversætter</div><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">C</span>Lærer</div></div>
+      <div class="q-opts-list"><div class="q-opt q-opt--rowbg" data-correct="false"><span class="q-opt__letter">A</span>Sygeplejerske</div><div class="q-opt q-opt--rowbg" data-correct="false"><span class="q-opt__letter">B</span>Oversætter</div><div class="q-opt q-opt--rowbg" data-correct="true"><span class="q-opt__letter">C</span>Lærer</div></div>
     </div>
     <div class="q-card">
       <div class="q-card__tags"><span class="tag tag--green">Q3</span><span class="tag tag--purple">MULTIPLE CHOICE</span></div>
       <h4>Hvor bor Sara?</h4>
-      <div class="q-opts-list"><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">A</span>I Frederiksberg</div><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">B</span>I Nørrebro</div><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">C</span>I Østerbro</div></div>
+      <div class="q-opts-list"><div class="q-opt q-opt--rowbg" data-correct="false"><span class="q-opt__letter">A</span>I Frederiksberg</div><div class="q-opt q-opt--rowbg" data-correct="true"><span class="q-opt__letter">B</span>I Nørrebro</div><div class="q-opt q-opt--rowbg" data-correct="false"><span class="q-opt__letter">C</span>I Østerbro</div></div>
     </div>
     <div class="q-card">
       <div class="q-card__tags"><span class="tag tag--green">Q4</span><span class="tag tag--purple">MULTIPLE CHOICE</span></div>
       <h4>Hvordan kommer Sara på arbejde?</h4>
-      <div class="q-opts-list"><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">A</span>Med bus</div><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">B</span>Til fods</div><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">C</span>På cykel</div></div>
+      <div class="q-opts-list"><div class="q-opt q-opt--rowbg" data-correct="false"><span class="q-opt__letter">A</span>Med bus</div><div class="q-opt q-opt--rowbg" data-correct="false"><span class="q-opt__letter">B</span>Til fods</div><div class="q-opt q-opt--rowbg" data-correct="true"><span class="q-opt__letter">C</span>På cykel</div></div>
     </div>
     <div class="q-card">
       <div class="q-card__tags"><span class="tag tag--green">Q5</span><span class="tag tag--purple">MULTIPLE CHOICE</span></div>
       <h4>Hvor lang tid tager det Sara at cykle til skolen?</h4>
-      <div class="q-opts-list"><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">A</span>Ca. 10 minutter</div><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">B</span>Ca. 20 minutter</div><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">C</span>Ca. 30 minutter</div></div>
+      <div class="q-opts-list"><div class="q-opt q-opt--rowbg" data-correct="false"><span class="q-opt__letter">A</span>Ca. 10 minutter</div><div class="q-opt q-opt--rowbg" data-correct="true"><span class="q-opt__letter">B</span>Ca. 20 minutter</div><div class="q-opt q-opt--rowbg" data-correct="false"><span class="q-opt__letter">C</span>Ca. 30 minutter</div></div>
     </div>
     <div class="q-card">
       <div class="q-card__tags"><span class="tag tag--green">Q6</span><span class="tag tag--purple">MULTIPLE CHOICE</span></div>
       <h4>Hvad underviser Sara i?</h4>
-      <div class="q-opts-list"><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">A</span>Dansk og engelsk</div><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">B</span>Matematik og naturfag</div><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">C</span>Historie og geografi</div></div>
+      <div class="q-opts-list"><div class="q-opt q-opt--rowbg" data-correct="false"><span class="q-opt__letter">A</span>Dansk og engelsk</div><div class="q-opt q-opt--rowbg" data-correct="true"><span class="q-opt__letter">B</span>Matematik og naturfag</div><div class="q-opt q-opt--rowbg" data-correct="false"><span class="q-opt__letter">C</span>Historie og geografi</div></div>
     </div>
     <div class="q-card">
       <div class="q-card__tags"><span class="tag tag--green">Q7</span><span class="tag tag--purple">MULTIPLE CHOICE</span></div>
       <h4>Hvorfor kan det være udfordrende for Sara at arbejde?</h4>
-      <div class="q-opts-list"><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">A</span>Fordi børnene er svære at lide</div><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">B</span>Fordi skolen er langt fra hendes hjem</div><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">C</span>Fordi hendes dansk ikke er perfekt</div></div>
+      <div class="q-opts-list"><div class="q-opt q-opt--rowbg" data-correct="false"><span class="q-opt__letter">A</span>Fordi børnene er svære at lide</div><div class="q-opt q-opt--rowbg" data-correct="false"><span class="q-opt__letter">B</span>Fordi skolen er langt fra hendes hjem</div><div class="q-opt q-opt--rowbg" data-correct="true"><span class="q-opt__letter">C</span>Fordi hendes dansk ikke er perfekt</div></div>
     </div>
     <div class="q-card">
       <div class="q-card__tags"><span class="tag tag--green">Q8</span><span class="tag tag--purple">MULTIPLE CHOICE</span></div>
       <h4>Hvornår mødes Sara med sine venner?</h4>
-      <div class="q-opts-list"><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">A</span>Om mandagen</div><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">B</span>Om torsdagen</div><div class="q-opt q-opt--rowbg"><span class="q-opt__letter">C</span>Om fredagen</div></div>
+      <div class="q-opts-list"><div class="q-opt q-opt--rowbg" data-correct="false"><span class="q-opt__letter">A</span>Om mandagen</div><div class="q-opt q-opt--rowbg" data-correct="false"><span class="q-opt__letter">B</span>Om torsdagen</div><div class="q-opt q-opt--rowbg" data-correct="true"><span class="q-opt__letter">C</span>Om fredagen</div></div>
     </div>
   </div>
 </div>
@@ -132,5 +140,6 @@
 
 <script src="interactions.js"></script>
 <script src="theme-panel.js"></script>
+<script src="mascot-quiz.js"></script>
 </body>
 </html>

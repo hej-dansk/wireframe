@@ -1,21 +1,10 @@
 /* ============================================================
-   HEJDANSK — SITE STYLESHEET (pixel-matched clone)
-   ------------------------------------------------------------
-   Base colors were sampled directly from the real product
-   screenshots. Every color/type choice funnels through the
-   :root variables below, and lighter/darker tints are derived
-   with color-mix() so the whole site restyles from one change.
-   A live customizer (bottom-right, hover or tap) lets you
-   override the base colors and fonts and see it ripple through
-   instantly — see theme-panel.js.
-   ============================================================ */
-
-/* ============================================================
    HEJDANSK — SITE STYLESHEET
    ------------------------------------------------------------
-   Colors and type here match the official Brand Guideline
-   (Glacier Blue / Bright Orange / Flag Red / Pale Ice Tint /
-   Fjord Navy / offwhite, all Inter). Everything funnels through
+   Colors match the official palette: Nordic Navy, Sky Blue,
+   Light Blue, Ice, Sand. Display type is Baloo 2 (the rounded,
+   playful weight used across the mascot stickers and the Wix
+   prototype), body copy stays Inter. Everything funnels through
    the :root variables below, with tints derived via color-mix()
    so the whole site restyles from one change. A live customizer
    (bottom-right, hover or tap) lets you override the base colors
@@ -24,50 +13,51 @@
    ============================================================ */
 
 :root {
-  /* ---- Brand colors (from the Brand Guideline, 7 Sept) ------ */
-  --glacier:   #7fb8cc;   /* Glacier Blue   */
-  --orange:    #e8792e;   /* Bright Orange  */
-  --paleice:   #b9dde8;   /* Pale Ice Tint  */
-  --flagred:   #c8102e;   /* Flag Red       */
-  --fjordnavy: #1c2e4a;   /* Fjord Navy     */
-  --offwhite:  #d9d9d9;   /* "Pure white" swatch — actually a soft neutral gray, used for muted surfaces/borders */
+  /* ---- Brand colors (official palette) ----------------------- */
+  --nordicnavy: #0f2d46;   /* Nordic Navy  */
+  --skyblue:    #3cb5e9;   /* Sky Blue     */
+  --lightblue:  #7ed1f3;   /* Light Blue   */
+  --ice:        #eaf6fc;   /* Ice          */
+  --sand:       #f5f2ec;   /* Sand         */
+  --flagred:    #d62839;   /* supporting red for "incorrect" states (matches the mascot sticker's red) */
+  --beakorange: #f2994a;   /* the logo's beak orange, used sparingly as a warm accent */
 
-  /* ---- Functional roles, all mapped onto the 6 colors above -- */
-  --navy:    var(--fjordnavy); /* header, headings, big stat numbers */
-  --green:   var(--orange);    /* buttons, links, positive state (kept the var name for compatibility) */
-  --amber:   var(--glacier);   /* rule boxes, "in progress", secondary highlight */
-  --red:     var(--flagred);   /* incorrect / needs-work state */
-  --purple:  color-mix(in srgb, var(--red) 55%, var(--navy)); /* "multiple choice" tag — a muted plum from Red+Navy */
-  --blue:    color-mix(in srgb, var(--amber) 65%, black);  /* "examples" / info tag text (darker for legibility) */
-  --logo-dk: var(--red);
-  --logo-mint: var(--amber);
+  /* ---- Functional roles, all mapped onto the palette above --- */
+  --navy:    var(--nordicnavy); /* header, headings, big stat numbers */
+  --green:   var(--skyblue);    /* buttons, links, positive state (kept the var name for compatibility) */
+  --amber:   var(--lightblue);  /* rule boxes, "in progress", secondary highlight */
+  --red:     var(--flagred);    /* incorrect / needs-work state */
+  --purple:  color-mix(in srgb, var(--red) 45%, var(--navy)); /* "multiple choice" tag — a muted plum from Red+Navy */
+  --blue:    color-mix(in srgb, var(--amber) 60%, black);  /* "examples" / info tag text (darker for legibility) */
+  --logo-dk: var(--beakorange);
+  --logo-mint: var(--skyblue);
 
   /* ---- Derived tints (auto-follow the base colors above) --- */
   --navy-dark:   color-mix(in srgb, var(--navy) 85%, black);
   --navy-tint:   color-mix(in srgb, var(--navy) 10%, white);
   --navy-tint-2: color-mix(in srgb, var(--navy) 18%, white);
-  --green-dark:  color-mix(in srgb, var(--green) 82%, black);
-  --green-tint:  color-mix(in srgb, var(--green) 14%, white);
-  --green-tint-2:color-mix(in srgb, var(--green) 22%, white);
-  --amber-tint:  color-mix(in srgb, var(--paleice) 45%, white);
-  --amber-bg:    color-mix(in srgb, var(--paleice) 30%, white);
+  --green-dark:  color-mix(in srgb, var(--green) 78%, black);
+  --green-tint:  color-mix(in srgb, var(--green) 16%, white);
+  --green-tint-2:color-mix(in srgb, var(--green) 24%, white);
+  --amber-tint:  color-mix(in srgb, var(--amber) 40%, white);
+  --amber-bg:    color-mix(in srgb, var(--amber) 25%, white);
   --red-tint:    color-mix(in srgb, var(--red) 15%, white);
   --purple-tint: color-mix(in srgb, var(--purple) 16%, white);
-  --blue-tint:   color-mix(in srgb, var(--paleice) 45%, white);
+  --blue-tint:   color-mix(in srgb, var(--amber) 40%, white);
 
   /* ---- Neutrals --------------------------------------------*/
-  --ink:      #1f2937;
-  --ink-soft: #5b6472;
-  --ink-mute: #8b93a1;
-  --page-bg:  color-mix(in srgb, var(--paleice) 22%, #fbfdfe);
+  --ink:      #17293a;
+  --ink-soft: #52697d;
+  --ink-mute: #8ba0b0;
+  --page-bg:  var(--ice);
   --card-bg:  #ffffff;
-  --card-border: color-mix(in srgb, var(--offwhite) 65%, white);
-  --option-bg: color-mix(in srgb, var(--paleice) 30%, white);
+  --card-border: color-mix(in srgb, var(--lightblue) 30%, white);
+  --option-bg: color-mix(in srgb, var(--lightblue) 20%, white);
+  --sand-bg:  var(--sand);
 
-  /* ---- Type — per the Brand Guideline font update:
-     Inter ExtraBold (headings), Inter Bold (subheadings),
-     Inter Regular (body). Line-height 1.25, letter-spacing 0. -- */
-  --font-display: "Inter", "Poppins", sans-serif;
+  /* ---- Type — Baloo 2 for headings (rounded, playful, matches
+     the mascot stickers), Inter for body copy. -------------- */
+  --font-display: "Baloo 2", "Poppins", sans-serif;
   --font-body:    "Inter", -apple-system, sans-serif;
 
   --radius-sm: 8px;
@@ -88,13 +78,13 @@ body {
 }
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 800; /* Inter ExtraBold — per Brand Guideline "Heading" spec */
+  font-weight: 700; /* Baloo 2 Bold — headings */
   margin: 0 0 0.3rem;
   color: var(--navy);
   line-height: 1.25;
   letter-spacing: 0;
 }
-h3, h4 { font-weight: 700; } /* Inter Bold — "Subheading" spec */
+h3, h4 { font-weight: 600; } /* Baloo 2 SemiBold — subheadings */
 p { margin: 0 0 0.9rem; }
 a { color: var(--green); text-decoration: none; }
 button, input, select { font-family: inherit; }
@@ -117,7 +107,7 @@ button, input, select { font-family: inherit; }
   flex-wrap: wrap;
 }
 .logo { display: flex; align-items: center; gap: 0.55rem; font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; margin-right: 0.5rem; }
-.logo__icon { width: 32px; height: 32px; flex-shrink: 0; display: block; }
+.logo__icon { width: 32px; height: 32px; flex-shrink: 0; display: block; object-fit: contain; }
 .logo__word { color: #fff; letter-spacing: 0; }
 .logo--onlight .logo__word { color: var(--navy); }
 .topnav__links { display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap; flex: 1; }
@@ -228,8 +218,9 @@ button, input, select { font-family: inherit; }
 
 /* ============================================================
    HERO (landing page) — photo background, swappable at runtime
-   by hero-uploader.js. Ships with assets/hero-default.jpg; upload
-   1–3 of your own to test a single cover or a sliding carousel.
+   by hero-uploader.js. Ships with the 3 brand scene photos as a
+   default carousel; upload 1–3 of your own to test a single cover
+   or a different sliding carousel.
    ============================================================ */
 .hero {
   position: relative;
@@ -507,6 +498,67 @@ button, input, select { font-family: inherit; }
   display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 800; flex-shrink: 0;
   transition: background 0.12s ease, color 0.12s ease;
 }
+/* ---- answer-checked states: real correct/incorrect feedback ---- */
+.q-opt.is-correct { border-color: var(--green); background: var(--green-tint); color: var(--green-dark); font-weight: 700; }
+.q-opt.is-correct .q-opt__letter { background: var(--green); color: #fff; }
+.q-opt.is-correct::after { content: "✓"; margin-left: auto; font-weight: 800; color: var(--green-dark); }
+.q-opt.is-wrong { border-color: var(--red); background: var(--red-tint); color: color-mix(in srgb, var(--red) 70%, black); font-weight: 700; }
+.q-opt.is-wrong .q-opt__letter { background: var(--red); color: #fff; }
+.q-opt.is-wrong::after { content: "✕"; margin-left: auto; font-weight: 800; color: var(--red); }
+.q-opt.is-locked { cursor: default; }
+.q-opt.is-dimmed { opacity: 0.55; }
+.q-card.is-answered-correct { border-color: var(--green); box-shadow: 0 0 0 3px var(--green-tint); }
+.q-card.is-answered-wrong { border-color: var(--red); box-shadow: 0 0 0 3px var(--red-tint); }
+
+/* ---- mascot sticker feedback: appears once a question is answered ---- */
+.q-card { position: relative; overflow: visible; }
+.mascot-pop {
+  display: none;
+  align-items: center; gap: 0.6rem;
+  margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed var(--card-border);
+  animation: mascotPop 0.35s cubic-bezier(.34,1.56,.64,1);
+}
+.mascot-pop.is-visible { display: flex; }
+.mascot-pop img { width: 76px; height: auto; flex-shrink: 0; }
+.mascot-pop__text { font-family: var(--font-display); font-weight: 700; color: var(--navy); font-size: 1rem; }
+.mascot-pop__text small { display: block; font-family: var(--font-body); font-weight: 500; color: var(--ink-soft); font-size: 0.82rem; margin-top: 0.15rem; }
+.mascot-pop .retry-link { font-family: var(--font-body); font-weight: 700; font-size: 0.85rem; color: var(--red); cursor: pointer; text-decoration: underline; }
+@keyframes mascotPop {
+  0% { opacity: 0; transform: translateY(6px) scale(0.96); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ---- "Did you know?" fact card ---- */
+.didyouknow-card {
+  display: flex; align-items: center; gap: 1.25rem;
+  background: var(--sand-bg); border-radius: var(--radius-lg);
+  padding: 1.25rem 1.75rem; margin: 1.5rem 0;
+}
+.didyouknow-card img { width: 110px; height: auto; flex-shrink: 0; }
+.didyouknow-card__body p { margin: 0; color: var(--ink); font-size: 0.98rem; }
+.didyouknow-card__body strong { color: var(--navy); }
+
+/* ---- quiz summary banner (all questions answered) ---- */
+.quiz-summary-banner {
+  display: none;
+  align-items: center; gap: 1.25rem;
+  background: var(--sand-bg); border-radius: var(--radius-lg);
+  padding: 1.5rem 1.75rem; margin-bottom: 1.5rem;
+}
+.quiz-summary-banner.is-visible { display: flex; animation: mascotPop 0.4s cubic-bezier(.34,1.56,.64,1); }
+.quiz-summary-banner img { width: 100px; height: auto; }
+.quiz-summary-banner h3 { margin-bottom: 0.2rem; }
+.quiz-summary-banner p { margin: 0; color: var(--ink-soft); }
+
+/* ---- floating "Try Again!" toast (quiz reset) ---- */
+.mascot-toast {
+  position: fixed; top: 90px; left: 50%; z-index: 90;
+  transform: translate(-50%, -20px); opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(.34,1.56,.64,1), opacity 0.3s ease;
+}
+.mascot-toast.is-visible { transform: translate(-50%, 0); opacity: 1; }
+.mascot-toast img { width: 150px; height: auto; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.18)); }
 .quiz-submit-bar { display: flex; align-items: center; justify-content: space-between; border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 1rem 1.5rem; background: #fff; margin-top: 1rem; }
 
 /* ============================================================

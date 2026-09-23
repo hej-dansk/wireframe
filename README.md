@@ -1,101 +1,110 @@
-# Hej Dansk — brand-guideline clone
+# Hej Dansk — brand-asset rebuild
 
-An 11-page static clone of the Hej Dansk app, matching the official
-Brand Guideline (colors, fonts, and real logo assets), with click
-interactions so you can see how the palette behaves when something
-actually happens (selected, checked, pressed, chosen), plus an
-uploadable hero cover photo for testing real imagery in the banner.
+An 11-page static site rebuilt around your real brand assets: the
+glossy 3D swan logo, the wing-motif scene photos, the mascot sticker
+set, and the official 5-color palette. The practice quiz and reading
+exercise now do real answer-checking with mascot feedback, and the
+whole thing is meant to be clicked through, not just looked at.
 
 ## Open it
 Open `index.html` in a browser — no build step needed.
 
-## Colors (from the Brand Guideline, 7 Sept)
+## Colors (official palette)
 ```
---glacier:   #7fb8cc   Glacier Blue
---orange:    #e8792e   Bright Orange
---paleice:   #b9dde8   Pale Ice Tint
---flagred:   #c8102e   Flag Red
---fjordnavy: #1c2e4a   Fjord Navy
---offwhite:  #d9d9d9   "Pure white" swatch (a soft neutral gray — used for muted borders/surfaces)
+--nordicnavy: #0f2d46   Nordic Navy   — header, headings, big numbers
+--skyblue:    #3cb5e9   Sky Blue      — buttons, links, correct/positive state
+--lightblue:  #7ed1f3   Light Blue    — secondary highlights, "in progress"
+--ice:        #eaf6fc   Ice           — page background
+--sand:       #f5f2ec   Sand          — warm card background (mascot cards)
 ```
-Fjord Navy drives the header/headings, Bright Orange drives buttons and
-links, Pale Ice Tint backs the rule boxes and page background, and Flag
-Red is reserved for alerts/incorrect states. Everything else (hover
-states, tag tints, the "multiple choice" tag) is a mix of these six.
+A supporting red (`#d62839`, matching the "Incorrect" sticker) is used
+only for wrong-answer feedback — it isn't one of your 5 named colors,
+but a UI needs *some* red for that state, so I pulled it straight from
+the sticker rather than inventing a new one.
 
 ## Fonts
-Inter only, per the guideline's font update:
-- **Heading** — Inter ExtraBold, line-height 1.25, letter-spacing 0
-- **Subheading** — Inter Bold
-- **Body** — Inter Regular
+**Baloo 2** for headings — the rounded, playful weight that matches the
+mascot stickers and the Wix prototype's display type. **Inter** stays
+for body copy. Both are swappable in the live customizer.
 
-## Logo
-Uses your actual brand assets (in `assets/`), not a redrawn placeholder:
-- `logo-original-transparent.svg` — the full-color swan mark, used in
-  the nav and footer next to the "Hej Dansk" wordmark
-- `logo-g_blue-bg.svg` — the swan in a Glacier-blue circle, used as the
-  favicon
-- `logo-grey-transparent.svg`, `logo_full.svg` — included for
-  reference/future use (the grey version for muted contexts, the full
-  lockup for light-background placements)
+## Logo & assets (all in `assets/`)
+- `logo-3d-swan.png` — the new glossy 3D swan mark, used in the nav and footer
+- `scene-bikers.jpg`, `scene-buildings.jpg`, `scene-street.jpg` — your
+  three wing-motif Copenhagen photos, compressed for web (~2MB → ~250KB
+  each) and used as the landing page's default hero carousel
+- `mascot-*.png` — the five swan mascot stickers (did-you-know, well-done,
+  incorrect, try-again, conversation), cleaned up (see note below) and
+  resized for web
+- `logo-original-transparent.svg`, `logo-g_blue-bg.svg` (favicon),
+  `logo-grey-transparent.svg`, `logo_full.svg` — kept from the earlier
+  brand-guideline pass, still referenced for the favicon
 
-## Hero cover photo — upload 1, or 2–3 for a carousel
-The landing page hero now uses a real photo (`assets/hero-default.jpg`,
-the swan/laptop/Copenhagen shot) instead of a CSS pattern, with two
-small controls under the CTA button:
-- **🖼 Change cover photo** — opens a file picker. Choose 1 image to
-  swap the cover outright, or 2–3 to get a slow, auto-advancing
-  carousel with click-able dots.
-- **↺ Reset** — clears whatever you uploaded and goes back to the
-  shipped default photo.
+**One fix worth knowing about:** three of your uploaded stickers
+(Incorrect, Try Again, Conversation) had a checkerboard pattern baked
+directly into the image pixels instead of real transparency — probably
+flattened at some point in their export. I wrote a small script to
+color-key that checkerboard back out and restore proper alpha
+transparency; the other two (Did You Know, Well Done) already had
+correct transparency and needed no fix.
 
-Uploads are resized on-device (max 1600px, JPEG ~82% quality) before
-being saved to `localStorage`, so a handful of photos stay well within
-storage limits and the choice persists across reloads and other pages
-you visit later. This only runs on `index.html` (`hero-uploader.js`);
-nothing else needs it.
+## The quiz pages now actually grade you
+Both `practice-quiz.html` (20 questions) and `reading-active.html` (the
+8-question Sara reading passage) are wired to a real answer key — I
+worked out every correct answer from the grammar chapter's own rules
+(gender exceptions, plural declensions, genitive forms) and the reading
+passage text, and baked them into each option as `data-correct`.
 
-## Live customizer — synced across every page
-Hover (or tap) the palette icon, bottom-right: color pickers for Navy /
-Orange / Glacier / Red, font selects for headings/body, and a reset.
-Changes save to `localStorage` and apply on every page the instant you
-open it — no flash of the old palette.
+Click an answer and:
+- **Correct** → the option fills Sky Blue with a checkmark, the card
+  gets a blue glow, and the **Well done!** swan appears with a short note.
+  The question locks — no changing your answer after you've got it right.
+- **Wrong** → the option fills red with an ✕, the card gets a red glow,
+  and the **Incorrect** swan appears with a "Try again" link that clears
+  your pick so you can retry. It stays open until you get it right.
+- **Progress counters are real**, not decorative — "N/M answered" only
+  counts questions you've actually gotten correct, and the Submit button
+  stays disabled until all of them are.
+- **Get everything right** and a Sand-colored "Well done — all correct!"
+  banner appears at the top with a final score.
+- **↺ Reset** clears every question on the page in one click and pops a
+  "Try Again!" mascot toast at the top of the screen.
 
-## Interactions — see the colors react to actions
-- Every button dips and darkens on click (`:active` state).
-- Chapter action buttons (Bookmark / In Progress / Mark Done) toggle
-  between an outlined "off" state and a filled Glacier-blue "on" state.
-- 12-Week Plan checkboxes fill Orange with a checkmark and strike
-  through the task title on click.
-- Quiz, quick-check, and reading options are click-to-select — picking
-  one fills it with the accent color, clears sibling options, and the
-  "N/M answered" counters update live.
-- Pricing cards mark themselves "Selected ✓" when clicked.
-- Chapter tabs swap active state on click.
+This logic lives in `mascot-quiz.js`, separate from the older
+`interactions.js` (which still handles the non-graded interactions
+below).
+
+## Everything from the earlier build, still here
+- **Did you know? card** — added to the dashboard, using the mascot sticker
+- **Conversation illustration** — added above the FAQ section on the landing page
+- **Live customizer** (palette icon, bottom-right) — color pickers now
+  labeled Nordic Navy / Sky Blue / Light Blue / Red, font selects default
+  to Baloo 2 / Inter, synced across every page via `localStorage`
+- **Chapter action toggles, plan checkboxes, pricing card selection,
+  chapter tabs, button press states** — unchanged from before, all still
+  interactive (`interactions.js`)
+- **Hero cover-photo uploader** — same feature as before, just now ships
+  with your 3 real photos as the default carousel instead of one stock
+  photo. Upload your own 1–3 images to test other covers; Reset restores
+  the 3 brand photos.
 
 ## Pages
 `index.html` (landing), `dashboard.html`, `plan.html`, `chapters.html`,
-`chapter-nouns.html` (full chapter detail), `practice-quiz.html` (20
-questions), `mock-tests.html`, `mock-test-intro.html`,
-`mock-test-modal.html`, `reading-active.html`, `reading-results.html`.
+`chapter-nouns.html` (full chapter detail — not yet re-graded, see below),
+`practice-quiz.html` (20 graded questions), `mock-tests.html`,
+`mock-test-intro.html`, `mock-test-modal.html`, `reading-active.html`
+(8 graded questions), `reading-results.html`.
 
-## Notes
-- Running body copy (testimonials, page titles like "Gratis Prøve –
-  Prøv Hejdansk") still reads "Hejdansk" as one word, matching the
-  real product content you uploaded earlier — only the logo lockup
-  itself (nav + footer) switched to the two-word "Hej Dansk" treatment
-  shown in the Brand Guideline. Say the word if you'd rather have the
-  one-word form everywhere instead.
-- "Reading", "Writing", and "Speaking" nav items are inert — no source
-  pages were included for those.
+## Honest scope note
+`chapter-nouns.html`'s inline "QUICK CHECK" boxes still use the older
+decorative click-to-select behavior (no right/wrong checking) — I know
+the correct answers for those too, but wiring them up would mean
+rebuilding that whole 27KB page from scratch, which I scoped out of
+this pass to focus on the two real quiz experiences. Say the word if
+you'd like those graded the same way.
 
 ## Hosting on GitHub Pages
-Already set up for this — push the folder as-is (root or a `/docs`
-folder), enable Pages in **Settings → Pages**, done. The included
-`.nojekyll` file tells GitHub Pages to skip its build step and serve
-everything exactly as-is. Every link is relative, so it works whether
-it's served at the root of `username.github.io` or at a subpath like
-`username.github.io/repo-name/`. And since it's served over `https://`
-from one real origin, the customizer's and hero uploader's cross-page
-sync are fully reliable — more so than opening the files locally via
-`file://`.
+Unchanged from before — push the folder as-is, enable Pages in
+**Settings → Pages**, done. The included `.nojekyll` file skips Jekyll's
+build step, every link is relative so it works at any subpath, and
+`localStorage` sync (customizer + hero photos) is fully reliable once
+served over `https://` from one real origin.

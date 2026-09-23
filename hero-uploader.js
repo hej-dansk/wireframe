@@ -4,7 +4,7 @@
    choice persists across reloads and other visits to this page. */
 (function () {
   const STORAGE_KEY = "hejdansk-hero-images";
-  const DEFAULT_IMAGE = "assets/hero-default.jpg";
+  const DEFAULT_IMAGES = ["assets/scene-bikers.jpg", "assets/scene-buildings.jpg", "assets/scene-street.jpg"];
   const MAX_IMAGES = 3;
   const SLIDE_MS = 4500;
   const MAX_DIMENSION = 1600;
@@ -27,7 +27,7 @@
       const raw = JSON.parse(localStorage.getItem(STORAGE_KEY));
       if (Array.isArray(raw) && raw.length) return raw;
     } catch (e) {}
-    return [DEFAULT_IMAGE];
+    return DEFAULT_IMAGES.slice();
   }
 
   function saveStoredImages(list) {
@@ -110,7 +110,7 @@
   });
 
   resetBtn.addEventListener("click", () => {
-    images = [DEFAULT_IMAGE];
+    images = DEFAULT_IMAGES.slice();
     activeIndex = 0;
     localStorage.removeItem(STORAGE_KEY);
     render();
