@@ -6,6 +6,16 @@ set, and the official 5-color palette. The practice quiz and reading
 exercise now do real answer-checking with mascot feedback, and the
 whole thing is meant to be clicked through, not just looked at.
 
+**Layout update:** the landing page went through a real structural
+redesign, not just a color/font swap — dramatic full-bleed photo hero,
+an arched-photo testimonial carousel (with working prev/next + dots),
+photo-and-navy-band feature cards, a photo-backed "student journey"
+block, and photo-header pricing cards, all matching the Wix/Squarespace
+reference videos. Dashboard, Chapters, Mock Tests, and the 12-Week Plan
+were all switched from thin-border boxes to soft-shadow "floating"
+cards with rounded colored badges, and Mock Tests cards now carry a
+photo header too, matching pricing.
+
 ## Open it
 Open `index.html` in a browser — no build step needed.
 

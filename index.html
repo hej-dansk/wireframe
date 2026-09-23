@@ -74,6 +74,11 @@
 </div>
 
 <section class="section section--tint">
+  <svg class="wing-decor wing-decor--corner-tr" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="120" cy="50" rx="70" ry="22" fill="var(--ice)" transform="rotate(-15 120 50)"/>
+    <ellipse cx="108" cy="62" rx="70" ry="22" fill="var(--lightblue)" opacity="0.85" transform="rotate(-9 108 62)"/>
+    <ellipse cx="98" cy="72" rx="64" ry="20" fill="var(--green)" opacity="0.75" transform="rotate(-4 98 72)"/>
+  </svg>
   <div class="section-head">
     <div class="kicker">TRUSTED BY DANISH LANGUAGE LEARNERS</div>
   </div>
@@ -103,64 +108,63 @@
     </div>
     <span class="pill-meta">★ Trustpilot</span>
   </div>
-  <div class="review-grid">
-    <div class="review-card">
-      <div class="review-card__who">
-        <div class="avatar">FA</div>
-        <div>
-          <div class="review-card__name">Fatima Al-Rashid</div>
-          <div class="review-card__date">2 days ago</div>
-        </div>
+
+  <div class="testimonial-carousel" id="testimonialCarousel"
+       data-photos="assets/scene-bikers.jpg,assets/scene-street.jpg,assets/scene-buildings.jpg"
+       data-names="Fatima Al-Rashid,Mohammed Hassan,Lin Xiaoyu"
+       data-roles="Passed PD3 · first attempt,Passed PD2 · 10 weeks,Passed PD3 · first attempt"
+       data-quotes="I passed PD3 on my first attempt after 12 weeks with Hejdansk. The structured plan and mock exams were exactly what I needed.|The readiness dashboard made all the difference. I knew exactly where I was weak and fixed it before the real exam.|The AI writing feedback is incredible. It scores your essay on 5 dimensions just like a real examiner. My writing score went from failing to passing in 3 weeks.">
+    <button type="button" class="testimonial-carousel__arrow" data-dir="-1" aria-label="Previous">‹</button>
+    <div class="testimonial-carousel__stage">
+      <img class="testimonial-photo" src="assets/scene-bikers.jpg" alt="">
+      <div class="testimonial-quote">
+        <span class="stars">★★★★★</span>
+        <p>&ldquo;I passed PD3 on my first attempt after 12 weeks with Hejdansk. The structured plan and mock exams were exactly what I needed.&rdquo;</p>
+        <div class="testimonial-quote__who">Fatima Al-Rashid</div>
+        <div class="testimonial-quote__role">Passed PD3 · first attempt</div>
       </div>
-      <div class="stars">★★★★★</div>
-      <p style="margin-top:0.5rem; font-size:0.9rem; color:var(--ink-soft)">I passed PD3 on my first attempt after 12 weeks with Hejdansk. The structured plan and mock exams were exactly what I needed.</p>
     </div>
-    <div class="review-card">
-      <div class="review-card__who">
-        <div class="avatar">MH</div>
-        <div>
-          <div class="review-card__name">Mohammed Hassan</div>
-          <div class="review-card__date">1 week ago</div>
-        </div>
-      </div>
-      <div class="stars">★★★★★</div>
-      <p style="margin-top:0.5rem; font-size:0.9rem; color:var(--ink-soft)">The readiness dashboard made all the difference. I knew exactly where I was weak and fixed it before the real exam.</p>
-    </div>
-    <div class="review-card">
-      <div class="review-card__who">
-        <div class="avatar">LX</div>
-        <div>
-          <div class="review-card__name">Lin Xiaoyu</div>
-          <div class="review-card__date">2 weeks ago</div>
-        </div>
-      </div>
-      <div class="stars">★★★★★</div>
-      <p style="margin-top:0.5rem; font-size:0.9rem; color:var(--ink-soft)">The AI writing feedback is incredible. It scores your essay on 5 dimensions just like a real examiner. My writing score went from failing to passing in 3 weeks.</p>
-    </div>
+    <button type="button" class="testimonial-carousel__arrow" data-dir="1" aria-label="Next">›</button>
   </div>
+  <div class="testimonial-dots" id="testimonialDots"></div>
 </section>
 
 <section class="section section--tint">
+  <svg class="wing-decor wing-decor--corner-bl" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="120" cy="50" rx="70" ry="22" fill="var(--ice)" transform="rotate(-15 120 50)"/>
+    <ellipse cx="108" cy="62" rx="70" ry="22" fill="var(--lightblue)" opacity="0.85" transform="rotate(-9 108 62)"/>
+    <ellipse cx="98" cy="72" rx="64" ry="20" fill="var(--green)" opacity="0.75" transform="rotate(-4 98 72)"/>
+  </svg>
   <div class="section-head">
     <h2>Everything built for one outcome</h2>
     <p class="subtitle">Pass your exam. Not just learn the language.</p>
   </div>
+
+  <div class="photo-feature-grid">
+    <div class="photo-feature-card">
+      <img class="photo-feature-card__img" src="assets/scene-buildings.jpg" alt="">
+      <div class="photo-feature-card__band">
+        <h3>Structured Lessons &amp; Quizzes</h3>
+        <p>12 chapters covering every grammar and vocabulary topic tested on PD2 &amp; PD3, with instant-feedback quizzes after every chapter.</p>
+      </div>
+    </div>
+    <div class="photo-feature-card">
+      <img class="photo-feature-card__img" src="assets/scene-bikers.jpg" alt="">
+      <div class="photo-feature-card__band">
+        <h3>12-Week Pass Plan</h3>
+        <p>A daily structured programme from day one to exam-ready — reading, quizzes, and writing tasks tracked automatically as you go.</p>
+      </div>
+    </div>
+    <div class="photo-feature-card">
+      <img class="photo-feature-card__img" src="assets/scene-street.jpg" alt="">
+      <div class="photo-feature-card__band">
+        <h3>Mock Exams</h3>
+        <p>Full-length PD2 and PD3 mock exams under realistic conditions, so nothing about exam day catches you off guard.</p>
+      </div>
+    </div>
+  </div>
+
   <div class="feature-grid">
-    <div class="feature-card">
-      <span class="emoji">📚</span>
-      <h3>Structured Lessons &amp; Quizzes</h3>
-      <p>12 chapters covering every grammar and vocabulary topic tested on PD2 &amp; PD3. Progress tracking, bookmarks, and instant-feedback quizzes after every chapter.</p>
-    </div>
-    <div class="feature-card">
-      <span class="emoji">📝</span>
-      <h3>Mock Exams</h3>
-      <p>Full-length PD2 and PD3 mock exams under realistic conditions. Know exactly what to expect — and expose every weak point before exam day.</p>
-    </div>
-    <div class="feature-card">
-      <span class="emoji">📅</span>
-      <h3>12-Week Pass Plan</h3>
-      <p>A daily structured programme from day one to exam-ready. Reading, quizzes, and writing tasks — all tracked automatically as you go.</p>
-    </div>
     <div class="feature-card">
       <span class="emoji">📊</span>
       <h3>Readiness Dashboard</h3>
@@ -180,6 +184,8 @@
 </section>
 
 <div class="journey-block">
+  <div class="journey-block__bg" style="background-image:url('assets/scene-street.jpg')"></div>
+  <div class="journey-block__scrim"></div>
   <span class="kicker">STUDENT JOURNEY</span>
   <h2>From zero to PD3 in 12 weeks</h2>
   <p class="sub">See how Fatima used Hejdansk to go from a 44% readiness score to passing PD3 on her first attempt.</p>
@@ -193,6 +199,8 @@
   </div>
   <div class="pricing-grid">
     <div class="price-card">
+      <img class="price-card__photo" src="assets/scene-buildings.jpg" alt="">
+      <div class="price-card__body">
       <div class="plan">BASIC</div>
       <div class="price">kr149<span>/mo</span></div>
       <div class="price-row"><span>Mock Exams</span><span>8 Mocks</span></div>
@@ -204,9 +212,12 @@
       <div class="price-row"><span>Support</span><span>—</span></div>
       <div class="price-row"><span>Money-back</span><span>—</span></div>
       <button class="btn btn--outline">Get Basic</button>
+      </div>
     </div>
     <div class="price-card price-card--popular">
       <span class="price-card__badge">MOST POPULAR</span>
+      <img class="price-card__photo" src="assets/scene-bikers.jpg" alt="">
+      <div class="price-card__body">
       <div class="plan">ADVANCED</div>
       <div class="price">kr299<span>/mo</span></div>
       <div class="price-row"><span>Mock Exams</span><span>Unlimited</span></div>
@@ -218,8 +229,11 @@
       <div class="price-row"><span>Support</span><span>Priority email</span></div>
       <div class="price-row"><span>Money-back</span><span>✓</span></div>
       <button class="btn btn--solid">Get Advanced</button>
+      </div>
     </div>
     <div class="price-card">
+      <img class="price-card__photo" src="assets/scene-street.jpg" alt="">
+      <div class="price-card__body">
       <div class="plan">PRO</div>
       <div class="price">kr1499<span>/mo</span></div>
       <div class="price-row"><span>Lesson Plan</span><span>Personalised</span></div>
@@ -231,6 +245,7 @@
       <div class="price-row"><span>Money-back</span><span>✓</span></div>
       <div class="price-row"><span>Extra</span><span>Danish partner</span></div>
       <button class="btn btn--outline">Get Pro</button>
+      </div>
     </div>
   </div>
   <p style="text-align:center; color:var(--ink-mute); font-size:0.85rem; margin-top:1.5rem">🛡 Money-back guarantee included on Advanced &amp; Pro plans.</p>

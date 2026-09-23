@@ -60,6 +60,38 @@
       this.textContent = "Selected ✓";
     });
 
+    // ---- Testimonial carousel: real prev/next + dot navigation ----
+    const carousel = document.getElementById("testimonialCarousel");
+    if (carousel) {
+      const photos = carousel.dataset.photos.split(",");
+      const names = carousel.dataset.names.split(",");
+      const roles = carousel.dataset.roles.split(",");
+      const quotes = carousel.dataset.quotes.split("|");
+      let idx = 0;
+
+      const dotsWrap = document.getElementById("testimonialDots");
+      photos.forEach((_, i) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        if (i === 0) dot.classList.add("is-active");
+        dot.addEventListener("click", () => render(i));
+        dotsWrap.appendChild(dot);
+      });
+
+      function render(newIdx) {
+        idx = (newIdx + photos.length) % photos.length;
+        carousel.querySelector(".testimonial-photo").src = photos[idx];
+        carousel.querySelector(".testimonial-quote p").innerHTML = "&ldquo;" + quotes[idx] + "&rdquo;";
+        carousel.querySelector(".testimonial-quote__who").textContent = names[idx];
+        carousel.querySelector(".testimonial-quote__role").textContent = roles[idx];
+        dotsWrap.querySelectorAll("button").forEach((d, i) => d.classList.toggle("is-active", i === idx));
+      }
+
+      carousel.querySelectorAll(".testimonial-carousel__arrow").forEach(btn => {
+        btn.addEventListener("click", () => render(idx + parseInt(btn.dataset.dir, 10)));
+      });
+    }
+
     // ---- Live "N/M answered" counters on quiz-style pages ----
     function updateAnsweredCount() {
       document.querySelectorAll(".q-card").forEach(card => {
