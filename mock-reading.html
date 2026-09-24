@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Hej Dansk — Pass PD2/PD3 on your first try." />
+<link rel="icon" type="image/svg+xml" href="assets/logo-g_blue-bg.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Baloo+2:wght@500;600;700;800&family=League+Spartan:wght@600;700;800&family=Poppins:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Fraunces:wght@500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="site.css" />
+<script>
+/* Apply any saved theme (colors + fonts) immediately, before paint,
+   so every page opens already re-themed — not just the one you
+   changed it on. theme-panel.js keeps this in sync when you edit. */
+(function () {
+  try {
+    var data = JSON.parse(localStorage.getItem("hejdansk-theme") || "null");
+    if (!data) return;
+    var root = document.documentElement.style;
+    if (data.colors) for (var k in data.colors) root.setProperty(k, data.colors[k]);
+    if (data.fonts && data.fonts.heading) root.setProperty("--font-display", '"' + data.fonts.heading + '", sans-serif');
+    if (data.fonts && data.fonts.body) root.setProperty("--font-body", data.fonts.body === "System UI" ? "-apple-system, BlinkMacSystemFont, sans-serif" : '"' + data.fonts.body + '", sans-serif');
+  } catch (e) {}
+})();
+</script>
+<title>Mock Reading — Hej Dansk</title>
+</head>
+<body>
+<header class="topnav">
+  <a href="index.html" class="logo">
+    <img src="assets/logo-3d-swan.png" class="logo__icon" alt="" />
+    <span class="logo__word">Hej Dansk</span>
+  </a>
+  <nav class="topnav__links">
+    <a href="dashboard.html" class="">Dashboard</a>
+      <a href="plan.html" class="">12-Week Plan</a>
+      <a href="chapters.html" class="">Chapters</a>
+      <a href="practice-quiz.html" class="">Practice</a>
+      <a href="#" class="">Reading</a>
+      <a href="#" class="">Writing</a>
+      <a href="#" class="">Speaking</a>
+      <a href="mock-tests.html" class="is-active">Mock Tests</a>
+      
+  </nav>
+  <div class="topnav__user">
+    <span>Hi,<br>Shabbir</span>
+    <button class="btn-logout" type="button">Logout</button>
+  </div>
+</header>
+<main class="page ">
+
+<div class="reading-topbar">
+  <a href="mock-exam-intro.html" class="crumb" style="margin:0">← Full Mock Exam</a>
+  <div style="display:flex; align-items:center; gap:0.75rem">
+    <span class="timer-badge" id="examTimer">⏱ 65:00</span>
+    <a href="mock-writing.html" class="btn btn--ghost">Submit &amp; continue →</a>
+  </div>
+</div>
+<h1>Læseforståelse — Viborg</h1>
+<p class="subtitle" style="margin-top:-0.75rem">Prøve i Dansk 3 · Maj-juni format · Ingen hjælpemidler</p>
+
+<div class="exam-stepper">
+  <div class="exam-stepper__step is-active" data-target="delprove-a"><b>A</b> Multiple choice</div>
+  <div class="exam-stepper__connector"></div>
+  <div class="exam-stepper__step" data-target="delprove-b"><b>B</b> Sætningshuller</div>
+  <div class="exam-stepper__connector"></div>
+  <div class="exam-stepper__step" data-target="delprove-c"><b>C</b> Ordforråd</div>
+</div>
+
+
+<section id="delprove-a" class="delprove">
+  <div class="delprove-head">
+    <div>
+      <div class="lesson-hero__kicker" style="margin-bottom:0.3rem">DELPRØVE A</div>
+      <h2 style="margin-bottom:0">Viborg bys historie</h2>
+    </div>
+    <span class="points">2 point pr. spørgsmål · 10 point i alt</span>
+  </div>
+  <div class="delprove-instructions">
+    <strong>Instruktion</strong>
+    <ul>
+      <li>Læs teksten <em>Viborg bys historie</em>.</li>
+      <li>Herunder er der fem spørgsmål til teksten. Vælg det rigtige svar.</li>
+    </ul>
+  </div>
+  <div class="reading-split">
+    <div class="passage-card card">
+      <div class="label">LÆS TEKSTEN</div>
+      <div class="passage-text">
+<p><strong>Viborg bys historie</strong></p>
+<p>Viborg har gennem historien været en af Danmarks betydeligste byer. Byen hed ikke oprindeligt Viborg men Vibjerg, der betyder 'det hellige sted på bakken'. Men da der i begyndelsen af 1300-tallet blev bygget en borg ved byen, blev byen herefter kaldt Viborg.</p>
+<p>Viborg blev i middelalderen domkirkeby, men var allerede tilbage i vikingetiden et religiøst mødested for hele Jylland. Byen var tillige centrum for handel. Byen blev også hjemsted for landstinget for Nørrejylland. Det var en slags domstol, der traf afgørelser om krig og fred, og som kunne idømme folk straffe.</p>
+<p>Med reformationen i 1536 mistede Viborg mange af sine kirkelige institutioner, men byen havde stadig stor betydning, især på grund af byens landsting, og fordi byen var et handelscentrum. Fra midten af 1600-tallet var Viborgs storhedstid forbi, og indbyggertallet på knap 2.500 stagnerede de næste halvandet hundrede år.</p>
+<p>I 1900-tallet voksede byen hastigt, og den havde en omfattende industri inden for blandt andet tekstil-, træ- og metalområderne. Dameundertøjsfabrikken Asani blev i 1950'erne og 1960'erne byens største virksomhed. I 2022 var 41.239 mennesker bosat i Viborg, hvilket er cirka fire gange flere end i starten af 1900-tallet.</p>
+<p style="color:var(--ink-mute); font-size:0.82rem; margin-top:1rem">Kilde: Bearbejdet efter http://ddb.byhistorie.dk</p>
+</div>
+    </div>
+    <div>
+      
+    <div class="q-card">
+      <div class="q-card__tags"><span class="tag tag--green">Q1</span><span class="tag tag--purple">2 POINT</span></div>
+      <h4>Hvorfor blev byen omdøbt fra Vibjerg til Viborg?</h4>
+      <div class="q-opts-list"><div class="q-opt" data-correct="false"><span class="q-opt__letter">A</span>Fordi kongen omdøbte byen efter et slag</div><div class="q-opt" data-correct="true"><span class="q-opt__letter">B</span>Fordi der blev bygget en borg ved byen i begyndelsen af 1300-tallet</div><div class="q-opt" data-correct="false"><span class="q-opt__letter">C</span>Fordi byen blev domkirkeby i middelalderen</div></div>
+    </div>
+    <div class="q-card">
+      <div class="q-card__tags"><span class="tag tag--green">Q2</span><span class="tag tag--purple">2 POINT</span></div>
+      <h4>Hvad var landstinget for Nørrejylland?</h4>
+      <div class="q-opts-list"><div class="q-opt" data-correct="false"><span class="q-opt__letter">A</span>Et handelscenter for hele Jylland</div><div class="q-opt" data-correct="false"><span class="q-opt__letter">B</span>En kirkelig institution, der uddannede præster</div><div class="q-opt" data-correct="true"><span class="q-opt__letter">C</span>En slags domstol, der traf afgørelser om krig, fred og straffe</div></div>
+    </div>
+    <div class="q-card">
+      <div class="q-card__tags"><span class="tag tag--green">Q3</span><span class="tag tag--purple">2 POINT</span></div>
+      <h4>Hvornår var Viborgs storhedstid forbi ifølge teksten?</h4>
+      <div class="q-opts-list"><div class="q-opt" data-correct="false"><span class="q-opt__letter">A</span>I begyndelsen af 1500-tallet</div><div class="q-opt" data-correct="true"><span class="q-opt__letter">B</span>Fra midten af 1600-tallet</div><div class="q-opt" data-correct="false"><span class="q-opt__letter">C</span>Straks efter reformationen i 1536</div></div>
+    </div>
+    <div class="q-card">
+      <div class="q-card__tags"><span class="tag tag--green">Q4</span><span class="tag tag--purple">2 POINT</span></div>
+      <h4>Hvad kendetegnede Viborgs udvikling i 1900-tallet?</h4>
+      <div class="q-opts-list"><div class="q-opt" data-correct="true"><span class="q-opt__letter">A</span>Byen voksede hastigt med industri inden for tekstil, træ og metal</div><div class="q-opt" data-correct="false"><span class="q-opt__letter">B</span>Byen mistede sin status som administrationscentrum</div><div class="q-opt" data-correct="false"><span class="q-opt__letter">C</span>Landstinget blev genoprettet i byen</div></div>
+    </div>
+    <div class="q-card">
+      <div class="q-card__tags"><span class="tag tag--green">Q5</span><span class="tag tag--purple">2 POINT</span></div>
+      <h4>Hvor mange mennesker boede der i Viborg i 2022?</h4>
+      <div class="q-opts-list"><div class="q-opt" data-correct="false"><span class="q-opt__letter">A</span>Cirka 2.500</div><div class="q-opt" data-correct="false"><span class="q-opt__letter">B</span>Cirka 25.000</div><div class="q-opt" data-correct="true"><span class="q-opt__letter">C</span>41.239</div></div>
+    </div>
+    </div>
+  </div>
+  <div class="answered-bar" id="delproveAProgress">0 / 5 besvaret</div>
+</section>
+
+
+<section id="delprove-b" class="delprove">
+  <div class="delprove-head">
+    <div>
+      <div class="lesson-hero__kicker" style="margin-bottom:0.3rem">DELPRØVE B</div>
+      <h2 style="margin-bottom:0">Hærvejsmarchen i Viborg</h2>
+    </div>
+    <span class="points">2 point pr. svar · 10 point i alt</span>
+  </div>
+  <div class="delprove-instructions">
+    <strong>Instruktion</strong>
+    <ul>
+      <li>Læs teksten. Der er fjernet fem sætninger, markeret med tallene 1-5.</li>
+      <li>Herunder er de fem sætninger samt to ekstra, der ikke passer i teksten (A-G).</li>
+      <li>Vælg for hvert tal (1-5), hvilket bogstav der passer. Hvert bogstav må kun bruges én gang.</li>
+    </ul>
+  </div>
+  <div class="gapfill-passage">
+<p>March betyder ifølge ordbogen "en organiseret vandring". Det er netop hvad Hærvejsmarchen i Viborg er, og mottoet er: Vejen til sundhed. Hærvejsmarchen afholdes altid den sidste weekend i juni på de historiske og naturskønne ruter i og omkring Viborg. <span class="gap-marker">1</span> Cirka halvdelen går både lørdag og søndag, hvor 2 x 45 km er vandrernes "ekstremrute". Den anden halvdel køber endagskort til ruterne.</p>
+<p>Hærvejsmarchen i Viborg og aktiviteterne omkring er en international folkelig totaloplevelse med indhold af natur, kultur, historie, sundhed, miljø, oplevelse og livsglæde. <span class="gap-marker">2</span> Her mødes tusinder af mennesker som i gamle dage, hvor man kom fra hele Jylland for at handle og feste og for måske at få afgjort nogle uenigheder på Tinge. <span class="gap-marker">3</span></p>
+<p>Tilmelding til Hærvejsmarchen sker ved køb af startkort, som kan købes online. <span class="gap-marker">4</span> Det giver adgang til rastepladser, toiletter og førstehjælp på ruterne. <span class="gap-marker">5</span> Når man har tilmeldt sig som deltager til årets hærvejsmarch, modtager man en kvittering for sin betaling.</p>
+</div>
+  <div class="gapfill-options"><div class="gapfill-option"><span class="gapfill-option__letter">A</span><span>Det historiske marked blev kaldt Snapsting, og nu er navnet genoplivet som navnet på byfesten i Viborg i hærvejsugen.</span></div><div class="gapfill-option"><span class="gapfill-option__letter">B</span><span>Den har de senere år haft deltagelse af 7-9.000 vandrere, der går enten lørdag eller søndag eller begge dage.</span></div><div class="gapfill-option"><span class="gapfill-option__letter">C</span><span>Alle deltagere skal medbringe deres eget telt for overnatning på ruterne.</span></div><div class="gapfill-option"><span class="gapfill-option__letter">D</span><span>Startkortet er personligt og skal bæres synligt under hele marchen.</span></div><div class="gapfill-option"><span class="gapfill-option__letter">E</span><span>En mangeårig tradition er, at der i Viborg i hærvejsugen op til og under marchen arrangeres en stor byfest på pladser og torve i den gamle, historiske by.</span></div><div class="gapfill-option"><span class="gapfill-option__letter">F</span><span>Hærvejsmarchen blev første gang afholdt i 1985 som en velgørenhedsbegivenhed.</span></div><div class="gapfill-option"><span class="gapfill-option__letter">G</span><span>Ved tilmelding har man mulighed for at bestille og købe en række tilvalg i forhold til indkvartering og forplejning.</span></div></div>
+  <div id="delproveBAnswers">
+    <div class="gapfill-answer-row" data-correct="B">
+      <span class="gap-marker">1</span>
+      <select><option value="">— vælg —</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option></select>
+      <span class="result-icon icon-correct">✓ Korrekt</span>
+      <span class="result-icon icon-wrong">✕ Prøv igen</span>
+    </div>
+    <div class="gapfill-answer-row" data-correct="E">
+      <span class="gap-marker">2</span>
+      <select><option value="">— vælg —</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option></select>
+      <span class="result-icon icon-correct">✓ Korrekt</span>
+      <span class="result-icon icon-wrong">✕ Prøv igen</span>
+    </div>
+    <div class="gapfill-answer-row" data-correct="A">
+      <span class="gap-marker">3</span>
+      <select><option value="">— vælg —</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option></select>
+      <span class="result-icon icon-correct">✓ Korrekt</span>
+      <span class="result-icon icon-wrong">✕ Prøv igen</span>
+    </div>
+    <div class="gapfill-answer-row" data-correct="D">
+      <span class="gap-marker">4</span>
+      <select><option value="">— vælg —</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option></select>
+      <span class="result-icon icon-correct">✓ Korrekt</span>
+      <span class="result-icon icon-wrong">✕ Prøv igen</span>
+    </div>
+    <div class="gapfill-answer-row" data-correct="G">
+      <span class="gap-marker">5</span>
+      <select><option value="">— vælg —</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option></select>
+      <span class="result-icon icon-correct">✓ Korrekt</span>
+      <span class="result-icon icon-wrong">✕ Prøv igen</span>
+    </div></div>
+  <button class="btn btn--solid check-section-btn" id="checkB">Check Delprøve B →</button>
+  <div class="section-score-banner" id="scoreB">
+    <img src="assets/mascot-welldone.png" alt="">
+    <div><h3></h3><p></p></div>
+  </div>
+</section>
+
+
+<section id="delprove-c" class="delprove">
+  <div class="delprove-head">
+    <div>
+      <div class="lesson-hero__kicker" style="margin-bottom:0.3rem">DELPRØVE C</div>
+      <h2 style="margin-bottom:0">Attraktioner i og omkring Viborg</h2>
+    </div>
+    <span class="points">1 point pr. svar · 8 point i alt</span>
+  </div>
+  <div class="delprove-instructions">
+    <strong>Instruktion</strong>
+    <ul>
+      <li>Der er fjernet otte ord eller udtryk fra teksten, angivet med tallene 1-8.</li>
+      <li>Vælg for hvert hul det ord eller udtryk, der passer bedst ind i teksten.</li>
+      <li>Hul 0 er givet som eksempel.</li>
+    </ul>
+  </div>
+  <div class="cloze-passage">
+<p><strong>Viborg Domkirke</strong> står både stærkt i bybilledet og i Viborg bys lange historie. Den er <select class="cloze-select" data-blank="0" data-correct="1"><option value="0">dog</option><option value="1">desuden</option><option value="2">alligevel</option><option value="3">i stedet</option></select> verdens største granitkirke, som man kan besøge, når der ikke er kirkelige handlinger.</p>
+<p>Desværre har kirken været ramt af brande ad flere omgange – senest i 1726, hvor der efter branden kun var mure og krypt tilbage. <select class="cloze-select" data-blank="1" data-correct="2"><option value="" selected>—</option><option value="0">Alligevel</option><option value="1">Desuden</option><option value="2">Derfor</option><option value="3">Modsat</option></select> er krypten den eneste del af den oprindelige domkirke fra 1133, der står tilbage.</p>
+<p>Efter branden i 1726 blev kirken hurtigt genopført, men arbejdet var dårligt udført. Den blev <select class="cloze-select" data-blank="2" data-correct="1"><option value="" selected>—</option><option value="0">imidlertid</option><option value="1">derfor</option><option value="2">tværtimod</option><option value="3">samtidig</option></select> lukket i 1862 og i årene efter revet ned, <select class="cloze-select" data-blank="3" data-correct="1"><option value="" selected>—</option><option value="0">hvorimod</option><option value="1">hvorefter</option><option value="2">hvorfor</option><option value="3">hvorved</option></select> man begyndte på en ny genopførelse. Brosten i plænen omkring kirken markerer <select class="cloze-select" data-blank="4" data-correct="0"><option value="" selected>—</option><option value="0">endvidere</option><option value="1">ellers</option><option value="2">omvendt</option><option value="3">sjældent</option></select>, hvor den gamle kirkes tilbygninger lå.</p>
+<p><strong>Skovgaard Museet</strong> er Viborgs kunstmuseum. Kunstneren Joakim Skovgaard har udsmykket Viborg Domkirke, og museet er oprettet for at hædre ham. På museet findes <select class="cloze-select" data-blank="5" data-correct="1"><option value="" selected>—</option><option value="0">dog</option><option value="1">derfor</option><option value="2">alligevel</option><option value="3">tværtimod</option></select> også en stor samling værker af hans far og søskende.</p>
+<p><strong>Mønsted Kalkgruber</strong> har kun otte grader året rundt, <select class="cloze-select" data-blank="6" data-correct="1"><option value="" selected>—</option><option value="0">men</option><option value="1">så</option><option value="2">eller</option><option value="3">for</option></select> det anbefales, at man har varmt tøj på. Man kan <select class="cloze-select" data-blank="7" data-correct="0"><option value="" selected>—</option><option value="0">også</option><option value="1">kun</option><option value="2">næppe</option><option value="3">aldrig</option></select> tage på en cirka en kilometer lang gåtur i det gamle kalkbrud.</p>
+<p><strong>Hvolris Jernalderlandsby</strong> har <select class="cloze-select" data-blank="8" data-correct="0"><option value="" selected>—</option><option value="0">primært</option><option value="1">sjældent</option><option value="2">aldrig</option><option value="3">tilfældigt</option></select> fokus på jernalderen i tiden omkring år 0.</p>
+</div>
+  <button class="btn btn--solid check-section-btn" id="checkC">Check Delprøve C →</button>
+  <div class="section-score-banner" id="scoreC">
+    <img src="assets/mascot-welldone.png" alt="">
+    <div><h3></h3><p></p></div>
+  </div>
+</section>
+
+
+<div class="card" style="text-align:center; margin-top:2rem">
+  <h3>Done with Reading?</h3>
+  <p style="color:var(--ink-soft)">Head into the Writing section to finish the full mock — same format as the real exam.</p>
+  <a href="mock-writing.html" class="btn btn--solid">Continue to Writing →</a>
+</div>
+
+</main>
+
+<script src="interactions.js"></script>
+<script src="theme-panel.js"></script>
+<script src="mascot-quiz.js"></script>
+<script src="mock-reading.js"></script>
+</body>
+</html>

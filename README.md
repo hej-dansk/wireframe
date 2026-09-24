@@ -118,7 +118,58 @@ below).
 `chapter-nouns.html` (full chapter detail — not yet re-graded, see below),
 `practice-quiz.html` (20 graded questions), `mock-tests.html`,
 `mock-test-intro.html`, `mock-test-modal.html`, `reading-active.html`
-(8 graded questions), `reading-results.html`.
+(8 graded questions), `reading-results.html`, plus the new full mock
+exam pages below.
+
+## Logo → landing page
+The "Hej Dansk" logo in the nav now links to `index.html` on every
+page — it used to go to the dashboard. Simple fix, applied site-wide.
+
+## Full Mock Exam — built on your real PD3 exam paper
+`mock-tests.html` now leads with a featured "Full PD3 Mock — Reading &
+Writing" card, built directly from the three PDFs you uploaded (a real
+May–June Reading text collection about Viborg, a real Reading task
+booklet, and the real Summer 2022 Writing exam paper). The existing
+single-topic mock cards stay below it as shorter alternatives.
+
+- **`mock-exam-intro.html`** — cover page mirroring the real exam's
+  metadata (sections, timing, aids), with a card for each section.
+- **`mock-reading.html`** — three real PD3 reading task types, all on
+  authentic Viborg text pulled from your uploaded collection:
+  - **Delprøve A** — 5 multiple-choice questions on "Viborg bys
+    historie," answers verified against the source text, graded
+    instantly per-question with the swan mascot (reuses the
+    `mascot-quiz.js` engine from the practice quiz).
+  - **Delprøve B** — sentence-gap reconstruction on the Hærvejsmarchen
+    section: 5 real sentences removed and numbered, 7 lettered options
+    (5 correct + 2 invented distractors) to match against, exactly like
+    the real exam's format. Checked as a whole via "Check Delprøve B."
+  - **Delprøve C** — an 8-blank vocabulary cloze test on the
+    Domkirke/Skovgaard/Kalkgruber passages, inline dropdowns styled
+    like fill-in-the-blank text, with a worked example given (blank 0)
+    just like the real paper.
+  - A live countdown timer (65:00, the real time limit) and a
+    click-or-scroll section stepper (A/B/C) tie it together.
+- **`mock-writing.html`** — the real Summer 2022 writing tasks:
+  - **Delprøve 1** — the actual "Mia" email scenario, rendered as a
+    mock email client with her three real questions underlined exactly
+    as in the source PDF.
+  - **Delprøve 2** — a working toggle between the real Task A (climate
+    concern by age, redrawn as a bar chart) and Task B (attractive
+    workplace factors), each with the real task bullets and the real
+    "~50% of your answer" instruction on the last point.
+  - Live word counters on both tasks (200-word minimum flagged on
+    Delprøve 2, matching the real requirement).
+  - **"✨ Get Feedback"** — a simulated version of the "Advanced Writing
+    Feedback" feature: a 5-dimension score breakdown (task achievement,
+    structure, vocabulary, grammar, register) computed from simple
+    heuristics on your actual text (word count, sentence length), with
+    a pass/fail verdict and the mascot. This is explicitly labeled as a
+    demo in the UI — it's not real language grading, just a preview of
+    the shape that feature would take.
+- New JS: `mock-reading.js` (timer, stepper, Delprøve B/C grading) and
+  `mock-writing.js` (timer, stepper, word counts, A/B toggle, mocked
+  feedback engine).
 
 ## Honest scope note
 `chapter-nouns.html`'s inline "QUICK CHECK" boxes still use the older

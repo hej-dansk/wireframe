@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Hej Dansk — Pass PD2/PD3 on your first try." />
+<link rel="icon" type="image/svg+xml" href="assets/logo-g_blue-bg.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Baloo+2:wght@500;600;700;800&family=League+Spartan:wght@600;700;800&family=Poppins:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Fraunces:wght@500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="site.css" />
+<script>
+/* Apply any saved theme (colors + fonts) immediately, before paint,
+   so every page opens already re-themed — not just the one you
+   changed it on. theme-panel.js keeps this in sync when you edit. */
+(function () {
+  try {
+    var data = JSON.parse(localStorage.getItem("hejdansk-theme") || "null");
+    if (!data) return;
+    var root = document.documentElement.style;
+    if (data.colors) for (var k in data.colors) root.setProperty(k, data.colors[k]);
+    if (data.fonts && data.fonts.heading) root.setProperty("--font-display", '"' + data.fonts.heading + '", sans-serif');
+    if (data.fonts && data.fonts.body) root.setProperty("--font-body", data.fonts.body === "System UI" ? "-apple-system, BlinkMacSystemFont, sans-serif" : '"' + data.fonts.body + '", sans-serif');
+  } catch (e) {}
+})();
+</script>
+<title>Mock Writing — Hej Dansk</title>
+</head>
+<body>
+<header class="topnav">
+  <a href="index.html" class="logo">
+    <img src="assets/logo-3d-swan.png" class="logo__icon" alt="" />
+    <span class="logo__word">Hej Dansk</span>
+  </a>
+  <nav class="topnav__links">
+    <a href="dashboard.html" class="">Dashboard</a>
+      <a href="plan.html" class="">12-Week Plan</a>
+      <a href="chapters.html" class="">Chapters</a>
+      <a href="practice-quiz.html" class="">Practice</a>
+      <a href="#" class="">Reading</a>
+      <a href="#" class="">Writing</a>
+      <a href="#" class="">Speaking</a>
+      <a href="mock-tests.html" class="is-active">Mock Tests</a>
+      
+  </nav>
+  <div class="topnav__user">
+    <span>Hi,<br>Shabbir</span>
+    <button class="btn-logout" type="button">Logout</button>
+  </div>
+</header>
+<main class="page ">
+
+<div class="reading-topbar">
+  <a href="mock-exam-intro.html" class="crumb" style="margin:0">← Full Mock Exam</a>
+  <div style="display:flex; align-items:center; gap:0.75rem">
+    <span class="timer-badge" id="examTimer">⏱ 2:30:00</span>
+    <button class="btn btn--ghost">Submit section</button>
+  </div>
+</div>
+<h1>Skriftlig fremstilling</h1>
+<p class="subtitle" style="margin-top:-0.75rem">Prøve i Dansk 3 · Maj-juni format · Hjælpemidler: Alle ordbøger</p>
+
+<div class="exam-stepper">
+  <div class="exam-stepper__step is-active" data-target="delprove-1"><b>1</b> En e-mail</div>
+  <div class="exam-stepper__connector"></div>
+  <div class="exam-stepper__step" data-target="delprove-2"><b>2</b> Vælg A eller B</div>
+</div>
+
+
+<section id="delprove-1" class="delprove">
+  <div class="delprove-head">
+    <div>
+      <div class="lesson-hero__kicker" style="margin-bottom:0.3rem">DELPRØVE 1</div>
+      <h2 style="margin-bottom:0">En e-mail</h2>
+    </div>
+    <span class="points">Skal besvares</span>
+  </div>
+  <div class="delprove-instructions">
+    <strong>Situation</strong>
+    <p style="margin:0.5rem 0 0">Du har fået en mail fra din danske ven Mia. Hun har været udstationeret i New York i tre år for et dansk firma, og nu skal hun snart hjem til Odense sammen med sin familie.</p>
+  </div>
+
+  <div class="email-client">
+    <div class="email-client__toolbar">
+      <span>📤 Send</span><span>💬 Chat</span><span>📎 Vedlæg</span><span>👤 Adresse</span><span>Aa Skrifter</span><span>🎨 Farver</span>
+    </div>
+    <div class="email-client__fields">
+      <div><b>Til:</b> dig@email.dk</div>
+      <div><b>Cc:</b></div>
+      <div><b>Emne:</b> Snart hjem!</div>
+    </div>
+    <div class="email-client__body">
+      <p>… Tak for snakken i sidste uge, det var hyggeligt at tale med dig på Skype. Jeg er meget spændt på at høre om din køreprøve. Hvordan gik det?</p>
+      <p>Som du ved, er vores tid i New York snart slut, og vi skal hjem til Odense om tre uger. <span class="email-underline">Jeg skal arbejde sammen med nogle kolleger, jeg ikke kender. Hvad synes du, jeg skal gøre for at få en god start på arbejdet?</span></p>
+      <p><span class="email-underline">Børnene er jo blevet teenagere, og de er meget kede af at sige farvel til deres venner her i New York. Jeg er spændt på, om de kan holde kontakten. Tror du, det er muligt?</span></p>
+      <p><span class="email-underline">Jens har fået nyt arbejde i Danmark, som han glæder sig til at komme i gang med efter 3 år som hjemmegående. Det nye job ligger dog 30 km fra Odense, så vi overvejer at købe en ekstra bil, men han kan også tage toget. Hvad ville du gøre?</span></p>
+    </div>
+  </div>
+
+  <div class="task-brief">
+    <strong>Opgave — Skriv et svar til din ven</strong>
+    <ul>
+      <li>Tak for mailen.</li>
+      <li>Kom ind på de understregede dele i mailen.</li>
+      <li>Foreslå, at I mødes, når Mia kommer hjem.</li>
+    </ul>
+  </div>
+
+  <div class="writing-area-wrap">
+    <textarea class="writing-area" id="writing1" placeholder="Kære Mia, tak for din mail …"></textarea>
+    <div class="writing-area-foot">
+      <span class="word-count" id="count1">0 ord</span>
+      <span style="color:var(--ink-mute); font-size:0.85rem">Hjælpemidler: Alle ordbøger</span>
+    </div>
+  </div>
+</section>
+
+
+<section id="delprove-2" class="delprove">
+  <div class="delprove-head">
+    <div>
+      <div class="lesson-hero__kicker" style="margin-bottom:0.3rem">DELPRØVE 2</div>
+      <h2 style="margin-bottom:0">Vælg opgave A eller B</h2>
+    </div>
+    <span class="points">Minimum 200 ord</span>
+  </div>
+
+  <div class="task-toggle" id="taskToggle">
+    <button type="button" class="is-active" data-task="A">A: Klimabekymring og alder</button>
+    <button type="button" data-task="B">B: En attraktiv arbejdsplads</button>
+  </div>
+
+  <div id="taskA">
+    <div class="chart-card">
+      <p style="font-weight:700; color:var(--navy); margin-bottom:0.25rem">Andel personer i forskellige aldersgrupper, der er meget bekymrede over klimaforandringer</p>
+      <div class="bar-chart">
+        <div class="bar-chart__col"><span class="bar-chart__value">29%</span><div class="bar-chart__bar" style="height:83%"></div><span class="bar-chart__label">18-34 år</span></div>
+        <div class="bar-chart__col"><span class="bar-chart__value">21%</span><div class="bar-chart__bar" style="height:60%"></div><span class="bar-chart__label">35-49 år</span></div>
+        <div class="bar-chart__col"><span class="bar-chart__value">14%</span><div class="bar-chart__bar" style="height:40%"></div><span class="bar-chart__label">50-70 år</span></div>
+        <div class="bar-chart__col"><span class="bar-chart__value">21%</span><div class="bar-chart__bar is-all" style="height:60%"></div><span class="bar-chart__label">Alle</span></div>
+      </div>
+      <p style="font-size:0.82rem; color:var(--ink-mute); margin-top:0.75rem">Undersøgelsen er foretaget blandt et repræsentativt udvalg på 2.000 personer i alderen 18-70 år. Kilde: https://ida.dk</p>
+    </div>
+    <div class="task-brief">
+      <strong>Opgave</strong>
+      <ul>
+        <li>Beskriv kort hovedtrækkene i diagrammet.</li>
+        <li>Fortæl, hvilke årsager der kan være til de forskelle, diagrammet viser.</li>
+        <li>Hvilke fordele og ulemper mener du, der kan være for samfundet ved, at unge bekymrer sig om klimaforandringerne? Begrund dine synspunkter. <em>(Besvarelsen af dette punkt skal udgøre ca. 50% af den samlede besvarelse.)</em></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="taskB" style="display:none">
+    <div class="chart-card">
+      <p style="font-weight:700; color:var(--navy); margin-bottom:0.9rem">Faktorer der kan have betydning for, hvor attraktiv en arbejdsplads er</p>
+      <ul class="factor-list">
+        <li>Godt samarbejde mellem kolleger</li>
+        <li>Fleksible arbejdstider</li>
+        <li>Indflydelse på egne arbejdsopgaver</li>
+        <li>God løn</li>
+        <li>Mulighed for efteruddannelse</li>
+        <li>Personalegoder</li>
+      </ul>
+    </div>
+    <div class="task-brief">
+      <strong>Opgave</strong>
+      <ul>
+        <li>Fortæl kort om en attraktiv arbejdsplads, du har været på eller har hørt om.</li>
+        <li>Kommentér en eller to af faktorerne fra listen.</li>
+        <li>Vurdér, om det er lederens personlige kvalifikationer eller faglige kvalifikationer, der er vigtigst for, om en arbejdsplads er attraktiv. <em>(Besvarelsen af dette punkt skal udgøre ca. 50% af den samlede besvarelse.)</em></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="writing-area-wrap">
+    <textarea class="writing-area" id="writing2" placeholder="Skriv din besvarelse her — minimum 200 ord …"></textarea>
+    <div class="writing-area-foot">
+      <span class="word-count" id="count2">0 / 200 ord</span>
+      <button class="btn btn--solid" id="getFeedback">✨ Get Feedback</button>
+    </div>
+  </div>
+
+  <div class="feedback-panel" id="feedbackPanel" style="display:none"></div>
+</section>
+
+
+<div class="card" style="text-align:center; margin-top:2rem">
+  <h3>Nice work!</h3>
+  <p style="color:var(--ink-soft)">That's the full mock — same structure as the real PD3 written exam, start to finish.</p>
+  <a href="dashboard.html" class="btn btn--solid">Back to Dashboard →</a>
+</div>
+
+</main>
+
+<script src="interactions.js"></script>
+<script src="theme-panel.js"></script>
+<script src="mock-writing.js"></script>
+</body>
+</html>
