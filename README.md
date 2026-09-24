@@ -16,6 +16,22 @@ were all switched from thin-border boxes to soft-shadow "floating"
 cards with rounded colored badges, and Mock Tests cards now carry a
 photo header too, matching pricing.
 
+**Nav + hero + chapter redesign (latest pass):**
+- **Nav** switched from a solid navy bar to a light, modern minimal
+  style used site-wide — white background, subtle shadow, navy text
+  links with a soft active-state pill, cleaner logout button.
+- **Landing hero** is now a true split layout (text on a clean Ice
+  background, left; full-bleed vivid photo, right) instead of text
+  overlaid on a dimmed photo — the photo is a full, undimmed banner
+  now, with the upload/reset controls tucked into a small gradient
+  strip at its foot instead of washing out the whole image.
+- **Chapter page** (`chapter-nouns.html`) opens with a new magazine-style
+  lesson hero — "IN THIS LESSON" kicker, a large headline, a bulleted
+  cheat-sheet of the chapter's key rules, and a full vivid photo
+  alongside — modeled directly on the reference layout you shared. The
+  detailed RULE tables, QUICK CHECKs, and full TOC still follow below
+  it for anyone who wants the deep-dive version.
+
 ## Open it
 Open `index.html` in a browser — no build step needed.
 
